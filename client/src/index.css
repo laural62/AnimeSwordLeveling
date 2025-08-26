@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+h1,h2{
+    font-family: "Cinzel Decorative", serif;
+}
+body, header, footer{
+    font-family: "Montserrat", sans-serif;
+}
+.bg-anime{
+    background-image: url(assets/bg-animeswordleveling.png);
+    background-repeat: no-repeat;
+}
+.button-blue{
+    background-color:#194558;
+    color: white;
+    border-radius: 10px 0 10px 0;
+    border: solid 2px;
+    border-color: #e4e4e4;
+    transition: 0.50s;
+}
+.bg-pop{
+    color:#5b0e0e;
+}
+.bg-manga{
+    color:#63265f;
+}
+.bg-gaming{
+    color: #194558;
+}

@@ -1,0 +1,71 @@
+import { createBrowserRouter } from "react-router-dom";
+import App from "./App";
+import FormulaireContact from "./pages/FormulaireContact";
+import Home from "./components/Home";
+import Nouveau from "./components/Nouveau";
+import Actu from "./components/Actu";
+import StreamerTwitch from "./components/StreamerTwitch";
+import Apropos from "./components/Apropos";
+import Login from "./pages/Login";
+import Inscription from "./pages/Inscription";
+import Header from "./components/Header";
+import PasswordOublie from "./components/PasswordOublie";
+import Convention from "./components/Convention";
+
+
+export const routerTest = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Home />
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/inscription",
+        element: <Inscription />,
+      },
+      {
+        path: "/password",
+        element: <PasswordOublie />,
+      },
+      {
+        path: "/header",
+        element: <Header />,
+      },
+      {
+        path: "/contact",
+        element: <FormulaireContact />,
+      },
+      {
+        path: "/home",
+        element: <Home />,
+      },
+      {
+        path: "/nouveau",
+        element: <Nouveau />,
+      },
+      {
+        path: "/actu",
+        element: <Actu />,
+      },
+      {
+        path: "/streamer",
+        element: <StreamerTwitch />,
+      },
+      {
+        path: "/apropos",
+        element: <Apropos />,
+      },
+      {
+        path: "/convention",
+        element: <Convention />,
+      },
+    ],
+  },
+]);

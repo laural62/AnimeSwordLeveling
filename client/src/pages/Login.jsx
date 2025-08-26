@@ -1,0 +1,65 @@
+import { NavLink } from "react-router-dom"
+
+export default function Login() {
+    
+    return (
+        <div className="bg-black text-white h-screen">
+            <h2 className="text-center text-2xl font-bold uppercase">Connexion !</h2>
+                {/**FORMULAIRE DE CONNEXION POUR LES UTILISATEURS INSCRIT ET ABONNER */}
+            <form
+            className="flex flex-col gap-4 mb-6 mx-auto max-w-[400px]">
+                <div className="flex flex-col mb-2">
+                    <label htmlFor="username" className="mb-2">
+                        Pseudo
+                    </label>
+                    <input
+                        
+                        type="text"
+                        id="username"
+                        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    
+                </div>
+
+                <div className="flex flex-col mb-2">
+                    <label htmlFor="password" className="mb-2">
+                        Mot de passe
+                    </label>
+
+                    <input
+                        
+                        type="password"
+                        id="password"
+                        className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                    
+                </div>
+
+                <div className="flex flex-col mb-2">
+                    <label htmlFor="rgpd" className="mb-2">
+                        <input
+                        
+                        type="checkbox"
+                        className="mr-4"
+                        id="rgpd"
+                        />
+                        En soumettant ce formulaire, j'accepte ...
+                    </label>
+                </div>
+
+                <button className="bg-white text-black px-4 py-2 rounded hover:bg-blue-900 hover:text-white">
+                Connexion
+                </button>
+
+                <div className="text-center">
+                    <NavLink to={"/password"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200">Mot de passe oubliée ?</NavLink>
+                </div>
+
+                <div className="text-center">
+                    <NavLink to={"/inscription"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200">S'inscrire !</NavLink>
+                </div>
+
+            </form>
+        </div>
+    );
+}

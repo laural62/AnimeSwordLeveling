@@ -25,7 +25,6 @@ export default function Register() {
         .email()
         .required("Le champ est obligatoire")
         .matches(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g, "Format email non valide"),
-        
         password: yup
         .string()
         .required("Le mot de passe est obligatoire")
@@ -139,7 +138,7 @@ export default function Register() {
                             Téléphone
                         </label>
                         <input
-                            {...register("username")}
+                            {...register("tel")}
                             type="tel"
                             id="tel"
                             className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"

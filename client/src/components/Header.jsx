@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-export default function Header({ userConnected, login, logout }) {
-    console.log(userConnected);
+export default function Header() {
+
+    const { userConnected } = useAuth();
+
     return (
         <header className="bg-black text-white flex justify-around items-center">
 
@@ -79,7 +82,7 @@ export default function Header({ userConnected, login, logout }) {
 
                     <NavLink
                         to={"/Login"}
-                        onClick={login}
+                        
                         className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
                         Connexion
                     </NavLink>

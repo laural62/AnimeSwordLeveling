@@ -7,13 +7,13 @@ import Actu from "./components/Actu";
 import StreamerTwitch from "./components/StreamerTwitch";
 import Apropos from "./components/Apropos";
 import Login from "./pages/Login";
-import Inscription from "./pages/Inscription";
 import Header from "./components/Header";
 import PasswordOublie from "./components/PasswordOublie";
 import Convention from "./components/Convention";
+import Register from "./pages/Register";
 
 
-export const routerTest = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -27,8 +27,8 @@ export const routerTest = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/inscription",
-        element: <Inscription />,
+        path: "/register",
+        element: <Register />,
       },
       {
         path: "/password",

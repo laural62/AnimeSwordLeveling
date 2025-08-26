@@ -1,23 +1,84 @@
-import { NavLink } from "react-router-dom"
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { NavLink, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
-    
+    const navigate = useNavigate();
+
+  const {login} = useAuth();
+
+  const defaultValues = {
+    data: "",
+    password: "",
+  };
+
+  const schema = yup.object({
+    data: yup.string().required("Ce champ est obligatoire"),
+    password: yup.string().required("Le mot de passe est obligatoire"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    defaultValues,
+    resolver: yupResolver(schema),
+    mode: "onChange",
+  });
+
+  async function submit(values) {
+    // console.log(values);
+    try {
+      const response = await fetch("http://localhost:3000/user/login", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+      const responseFromBackend = await response.json();
+      console.log(responseFromBackend);
+
+      if (response.ok) {
+        toast.success("Bien connecté");
+        login(responseFromBackend.user);
+        navigate("/");
+        reset(defaultValues);
+      } else {
+        toast.error(responseFromBackend.message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    // reset(defaultValues);
+    // requete HTTP
+  }
+
+
     return (
         <div className="bg-black text-white h-screen">
             <h2 className="text-center text-2xl font-bold uppercase">Connexion !</h2>
                 {/**FORMULAIRE DE CONNEXION POUR LES UTILISATEURS INSCRIT ET ABONNER */}
             <form
-            className="flex flex-col gap-4 mb-6 mx-auto max-w-[400px]">
+            className="flex flex-col gap-4 mb-6 mx-auto max-w-[400px]"
+            onSubmit={handleSubmit(submit)}
+            >
                 <div className="flex flex-col mb-2">
                     <label htmlFor="username" className="mb-2">
                         Pseudo
                     </label>
                     <input
-                        
+                        {...register("data")}
                         type="text"
-                        id="username"
+                        id="data"
                         className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
+                    {errors.data && <p className="text-red-500">{errors.data.message}</p>}
                     
                 </div>
 
@@ -27,18 +88,20 @@ export default function Login() {
                     </label>
 
                     <input
-                        
+                        {...register("password")}
                         type="password"
                         id="password"
                         className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
+                    {errors.password && (
+                        <p className="text-red-500">{errors.password.message}</p>
+                    )}
                     
                 </div>
 
                 <div className="flex flex-col mb-2">
                     <label htmlFor="rgpd" className="mb-2">
                         <input
-                        
                         type="checkbox"
                         className="mr-4"
                         id="rgpd"
@@ -56,7 +119,7 @@ export default function Login() {
                 </div>
 
                 <div className="text-center">
-                    <NavLink to={"/inscription"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200">S'inscrire !</NavLink>
+                    <NavLink to={"/register"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200">S'inscrire !</NavLink>
                 </div>
 
             </form>

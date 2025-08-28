@@ -54,7 +54,7 @@ export default function Header() {
                         </NavLink>
 
                     <NavLink 
-                        to="/" onClick={logout} 
+                        to="/" 
                         className="text-white font-semibold" >
                         Deconnexion</NavLink>
                     

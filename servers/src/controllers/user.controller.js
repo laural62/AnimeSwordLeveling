@@ -1,23 +1,44 @@
 import User from "../models/user.schema.js";
+import TempUser from "../models/tempuser.schema.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { sendConfirmationEmail } from "../email/email.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const createTokenEmail = (email) => {
+  return jwt.sign({ email }, process.env.SECRET_KEY, { expiresIn: "120s" });
+};
 
 export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
-    const user = await User.findOne({ email });
-    const secondUser = await User.findOne({ username });
+    const existingUserMail = await User.findOne({ email });
+    const existingUserPseudo = await User.findOne({ username });
+    const existingTempUserMail = await TempUser.findOne({ email });
+    const existingTempUserPseudo = await TempUser.findOne({ username });
+
+    if (existingUserMail || existingUserPseudo) {
+      return res.status(400).json({ message: "Déjà inscrit" });
+    } else if (existingTempUserMail || existingTempUserPseudo) {
+      return res.status(400).json({ message: "Vérifiez vos email" });
+    }
+
+    const token = createTokenEmail(email);
+    await sendConfirmationEmail(email, token);
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    if (user || secondUser) {
-      return res.status(400).json({ message: "Déjà inscrit" });
-    }
-    const newUser = new User({
+    const tempUser = new TempUser({
       username,
       email,
       password: hashedPassword,
+      token,
     });
-    await newUser.save();
-    res.status(200).json({ message: "Utilisateur enregistré" });
+    await tempUser.save();
+    res.status(200).json({ message: "Veuillez confirmer votre inscription en consultant votre boite mail",
+    });
   } catch (error) {
     console.log(error);
   }
@@ -25,8 +46,11 @@ export const register = async (req, res) => {
 
 export const login = async (req, res) => {
   const { data, password } = req.body;
+
+  // verification en console et recupere les données
   console.log(req.body);
 
+  // verification des données
   let user;
 
   const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -50,4 +74,33 @@ export const login = async (req, res) => {
 
   // Si tout est bon
   res.status(200).json({ user, message: "Connexion réussie" });
+};
+
+export const verifyMail = async (req, res) => {
+  const { token } = req.params;
+  console.log(token);
+
+  try {
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    const tempUser = await TempUser.findOne({ email: decoded.email, token });
+    console.log(tempUser);
+
+    if (!tempUser) {
+      return res.redirect(`${process.env.CLIENT_URL}/register?message=error`);
+    }
+
+    const newUser = new User({
+      username: tempUser.username,
+      email: tempUser.email,
+      password: tempUser.password,
+    });
+    await newUser.save();
+    await TempUser.deleteOne({ email: tempUser.email });
+    res.redirect(`${process.env.CLIENT_URL}/register?message=success`);
+  } catch (error) {
+    console.log(error);
+    if (error.name === "TokenExpiredError") {
+      return res.redirect(`${process.env.CLIENT_URL}/register?message=error`);
+    }
+  }
 };

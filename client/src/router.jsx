@@ -11,6 +11,9 @@ import Header from "./components/Header";
 import PasswordOublie from "./components/PasswordOublie";
 import Convention from "./components/Convention";
 import Register from "./pages/Register";
+import AnimeManga from "./components/categorie/AnimeManga";
+import FigurinePop from "./components/categorie/FigurinePop";
+import JeuxVideo from "./components/categorie/JeuxVideo";
 
 
 export const router = createBrowserRouter([
@@ -65,6 +68,18 @@ export const router = createBrowserRouter([
       {
         path: "/convention",
         element: <Convention />,
+      },
+      {
+        path: "/manga",
+        element: <AnimeManga />,
+      },
+      {
+        path: "/figurine",
+        element: <FigurinePop />,
+      },
+      {
+        path: "/jeuxvideo",
+        element: <JeuxVideo />,
       },
     ],
   },

@@ -8,7 +8,7 @@ export default function FormulaireContact() {
             <h3 className="text-center m-2">Pour nous contacter, remplissez ce formulaire ci dessous !</h3>
 
             <form
-            className="flex flex-col gap-4 mb-6 mx-auto max-w-[400px]">
+            className="flex flex-col sm:gap-4 gap-2 mb-6 mx-auto sm:w-[600px] w-[300px]">
             {/**Speudo */}
                 <div className="flex flex-col mb-2">
                     <label htmlFor="username" className="mb-2">
@@ -85,7 +85,9 @@ export default function FormulaireContact() {
                         className="mr-4"
                         id="rgpd"
                         />
-                        En soumettant ce formulaire, j'accepte ...
+                        En soumettant ce formulaire, vous acceptez que les données fournies soient utilisées pour vous recontacter.
+                        Pour connaitre et exercer vos droits sur ces données, vous pouvez consulter notre <a href="CGU.pdf" className="font-bold underline">politique de protection
+                         des données personnelles.</a>
                     </label>
                 </div>
             {/**boutton envoie formulaire + bouton retour -> Accueil */}

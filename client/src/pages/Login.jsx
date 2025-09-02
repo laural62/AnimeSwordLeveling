@@ -47,6 +47,7 @@ export default function Login() {
       if (response.ok) {
         toast.success("Bien connecté");
         login(responseFromBackend.user);
+
         navigate("/");
         reset(defaultValues);
       } else {
@@ -59,13 +60,12 @@ export default function Login() {
     // requete HTTP
   }
 
-
     return (
-        <div className="bg-black text-white h-screen">
+        <div className="bg-black text-white md:h-screen h-[80vh]">
             <h2 className="text-center text-2xl font-bold uppercase">Connexion !</h2>
                 {/**FORMULAIRE DE CONNEXION POUR LES UTILISATEURS INSCRIT ET ABONNER */}
             <form
-            className="flex flex-col gap-4 mb-6 mx-auto max-w-[400px]"
+            className="flex flex-col items-center justify-center gap-4 mb-6 mx-auto sm:max-w-[600px] sm:w-[500px] w-[250px]"
             onSubmit={handleSubmit(submit)}
             >
                 <div className="flex flex-col mb-2">
@@ -106,7 +106,7 @@ export default function Login() {
                         className="mr-4"
                         id="rgpd"
                         />
-                        En soumettant ce formulaire, j'accepte ...
+                        En soumettant ce formulaire, j'accepte les politiques de confidentialités,  les mentions légales et les conditions générales d'utilisation.
                     </label>
                 </div>
 

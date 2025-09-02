@@ -7,7 +7,7 @@ body, header, footer{
     font-family: "Montserrat", sans-serif;
 }
 .bg-anime{
-    background-image: url(assets/bg-animeswordleveling.png);
+    background-image: url(assets/bg-animeswordleveling.webp);
     background-repeat: no-repeat;
 }
 .button-blue{

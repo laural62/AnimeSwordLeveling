@@ -16,7 +16,7 @@ export default function StreamerTwitch({ userConnected }) {
             {/**{userConnected ? (*/}
                 <div className="flex justify-around flex-col h-screen">
                     <div className="flex flex-row gap-3">
-                        <img src="src/assets/banniere-altabichon.png" className="h-100 w-auto" alt="image pub pour altabichon" title="banniere pub altabichon"/>
+                        <img src="src/assets/banniere-altabichon.webp" className="h-100 w-auto" alt="image pub pour altabichon" title="banniere pub altabichon"/>
 
                         <div className="p-2 m-1"> 
                             
@@ -78,7 +78,7 @@ export default function StreamerTwitch({ userConnected }) {
 
                     {/**image + texte */}
                     <div className="flex flex-row">
-                        <img src="src/assets/banniere-jarlspunk.png" className="h-100 w-auto" alt="image pub pour jarlspunk" title="banniere pub jarlspunk"/>
+                        <img src="src/assets/banniere-jarlspunk.webp" className="h-100 w-auto" alt="image pub pour jarlspunk" title="banniere pub jarlspunk"/>
 
                         <div className="p-2 m-2"> 
                             {/**DESCRIPTIF DU STREAMER JARLSPUNK*/}

@@ -6,8 +6,13 @@ const AuthContext = createContext();
 export function AuthProvider ({ children }) {
     const [userConnected, setUserConnected] = useState(null);
 
+    console.log(userConnected);
     const login = async (values) => {
         setUserConnected(values);
+    };
+    
+    const logout = () => {
+        setUserConnected(nul);
     };
 
     return (
@@ -15,6 +20,7 @@ export function AuthProvider ({ children }) {
             value={{
                 userConnected,
                 login,
+                logout,
             }}
             >
                 {children}

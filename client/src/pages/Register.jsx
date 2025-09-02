@@ -1,17 +1,32 @@
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useEffect } from "react";
+import { signUp } from "../api/auth.api";
 
 export default function Register() {
 
     const navigate = useNavigate();
+    const [params] = useSearchParams();
+    const message = params.get("message");
+    console.log(message);
 
-   // const {}
+    useEffect(() => {
+        if (message === "error") {
+        toast.error("Délai dépassé. Veuillez vous réinscrire");
+        navigate("/register", { replace: true });
+        } else if (message === "success") {
+        toast.success("Votre inscription est confirmé");
+        navigate("/login");
+        }
+    }, [message, navigate]);
 
     const defaultValues = {
         username: "",
+        name: "",
+        fisrtname: "",
         email: "",
         password: "",
         confirmPassword: "",
@@ -20,6 +35,8 @@ export default function Register() {
 
     const schema = yup.object({
         username: yup.string().required("Ce champ est obligatoire"),
+        name: yup.string().required("Ce champ est obligatoire"),
+        firstname: yup.string().required("Ce champ est obligatoire"),
         email: yup
         .string()
         .email()
@@ -53,20 +70,14 @@ export default function Register() {
         mode: "onChange",
     });
 
-    const test = async () => {};
+    
 
     async function submit(values) {
         // console.log(values);
         try {
-        const response = await fetch("http://localhost:3000/user", {
-            method: "POST",
-            body: JSON.stringify(values),
-            headers: {
-            "Content-type": "application/json",
-            },
-        });
-        const responseFromBackend = await response.json();
-        if (response.ok) {
+        // faire appel à une methode qui fait la requete http
+        const responseFromBackend = await signUp(values);
+        if (responseFromBackend.message !== "Déjà inscrit") {
             toast.success(responseFromBackend.message);
             navigate("/login");
             reset(defaultValues);
@@ -84,12 +95,12 @@ export default function Register() {
             <h2 className="text-center text-2xl font-bold">S'inscrire !</h2>
                 {/**formulaire d'inscription pour créer un compte utilisateurs */}
             <form
-                className="flex flex-col gap-4 mb-6 mx-auto max-w-[500px]"
+                className="flex items-center justify-center flex-col sm:gap-4 gap-1 mb-6 mx-auto sm:max-w-[800px] w-[300px]"
                 onSubmit={handleSubmit(submit)}
             >
 
                     {/**Pseudo */}
-                <div className="flex flex-col mb-2">
+                <div className="flex flex-col mb-2 w-[500px]">
                     <label htmlFor="username" className="mb-2">
                         Pseudo
                     </label>
@@ -106,13 +117,13 @@ export default function Register() {
                 </div>
 
                     {/**Nom & Prenom */}
-                <div className="flex flex-row mb-5 gap-3">
+                <div className="flex sm:flex-row flex-col mb-5 sm:gap-3 gap-1">
                     <div>
                         <label htmlFor="name" className="mb-5">
                             Nom
                         </label>
                         <input
-                            {...register("username")}
+                            {...register("name")}
                             type="text"
                             id="name"
                             className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -123,7 +134,7 @@ export default function Register() {
                             Prénom
                         </label>
                         <input
-                            {...register("username")}
+                            {...register("firstname")}
                             type="text"
                             id="firstName"
                             className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -132,7 +143,7 @@ export default function Register() {
                 </div>
 
                     {/**Nom & Prenom */}
-                <div className="flex flex-row mb-5 gap-3">
+                <div className="flex sm:flex-row flex-col mb-4 sm:gap-3 gap-1">
                     <div>
                         <label htmlFor="tel" className="mb-5">
                             Téléphone
@@ -161,7 +172,7 @@ export default function Register() {
                 </div>
 
                     {/**Password & confirmation password */}
-                <div className="flex flex-col mb-2">
+                <div className="flex flex-col mb-2 w-[500px]">
                     <label htmlFor="password" className="mb-2">
                         Mot de passe
                     </label>
@@ -178,7 +189,7 @@ export default function Register() {
                     
                 </div>
 
-                <div className="flex flex-col mb-2">
+                <div className="flex flex-col mb-2 w-[500px]">
                     <label htmlFor="confirmPassword" className="mb-2">
                         Confirmation du mot de passe
                     </label>
@@ -195,7 +206,7 @@ export default function Register() {
                 </div>
 
                     {/**checkbox + rgpd*/}
-                <div className="flex flex-col mb-2">
+                <div className="flex flex-col mb-2 w-[500px]">
                     <label htmlFor="rgpd" className="mb-2">
                         <input
                         {...register("rgpd")}
@@ -203,7 +214,7 @@ export default function Register() {
                         className="mr-4"
                         id="rgpd"
                         />
-                        En soumettant ce formulaire, j'accepte ...
+                        En soumettant ce formulaire, j'accepte les conditions générales d'utilisations, la politique de confidentialité et les mentions légales.
                     </label>
                     {errors.rgpd && <p className="text-red-500">{errors.rgpd.message}</p>}
                 </div>

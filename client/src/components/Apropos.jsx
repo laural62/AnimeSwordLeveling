@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 
 export default function Apropos() {
     return(
-        <section className="bg-black text-white flex-col sm:h-screen h-[80vh] flex justify-center items-center p-2 gap-2">
-            <h2 className="text-3xl m-2">A propos de Nous !</h2>
+        <section className="bg-black text-white flex-col sm:h-screen h-[80vh] flex justify-center items-center px-2 sm:gap-4">
+            <h2 className="sm:text-3xl text-2xl">A propos de Nous !</h2>
             
-            <div className="flex sm:flex-row w-[auto] px-3">
+            <div className="flex sm:flex-row flex-col items-center w-[auto] px-3">
                 <img src="src/assets/yuki-laura.webp" alt="image personnage feminin" title="personnage feminin manga" 
-                className="h-[200px] md:h-[400px]"/>
+                className="sm:h-[400px] sm:w-[250px] object-cover w-[150px]"/>
             
 
                 {/**création d"un paragraphe descriptif version tablette et pc*/}

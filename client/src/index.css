@@ -19,11 +19,14 @@ body, header, footer{
     transition: 0.50s;
 }
 .bg-pop{
-    color:#5b0e0e;
+    background-color:#5b0e0e;
+    color: white;
 }
 .bg-manga{
-    color:#63265f;
+    background-color:#63265f;
+    color: white;
 }
 .bg-gaming{
-    color: #194558;
+    background-color: #194558;
+    color: white;
 }

@@ -95,12 +95,12 @@ export default function Register() {
             <h2 className="text-center text-2xl font-bold">S'inscrire !</h2>
                 {/**formulaire d'inscription pour créer un compte utilisateurs */}
             <form
-                className="flex items-center justify-center flex-col sm:gap-4 gap-1 mb-6 mx-auto sm:max-w-[800px] w-[300px]"
+                className="flex items-center justify-center flex-col sm:gap-4 gap-1 mb-6 mx-auto sm:max-w-[800px] w-[200px]"
                 onSubmit={handleSubmit(submit)}
             >
 
                     {/**Pseudo */}
-                <div className="flex flex-col mb-2 w-[500px]">
+                <div className="flex flex-col mb-2 sm:w-[500px]">
                     <label htmlFor="username" className="mb-2">
                         Pseudo
                     </label>
@@ -172,7 +172,7 @@ export default function Register() {
                 </div>
 
                     {/**Password & confirmation password */}
-                <div className="flex flex-col mb-2 w-[500px]">
+                <div className="flex flex-col mb-2 sm:w-[500px]">
                     <label htmlFor="password" className="mb-2">
                         Mot de passe
                     </label>
@@ -189,7 +189,7 @@ export default function Register() {
                     
                 </div>
 
-                <div className="flex flex-col mb-2 w-[500px]">
+                <div className="flex flex-col mb-2 sm:w-[500px]">
                     <label htmlFor="confirmPassword" className="mb-2">
                         Confirmation du mot de passe
                     </label>
@@ -206,7 +206,7 @@ export default function Register() {
                 </div>
 
                     {/**checkbox + rgpd*/}
-                <div className="flex flex-col mb-2 w-[500px]">
+                <div className="flex flex-col mb-2 sm:w-[500px]">
                     <label htmlFor="rgpd" className="mb-2">
                         <input
                         {...register("rgpd")}

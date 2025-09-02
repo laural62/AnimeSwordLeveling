@@ -1,7 +1,8 @@
-import React from 'react'
-
 export default function AnimeManga() {
   return (
-    <div>AnimeManga</div>
-  )
+    <section className="bg-manga h-screen">
+      <h2>Anime et Manga !</h2>
+
+    </section>
+  );
 }

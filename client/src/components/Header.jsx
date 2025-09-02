@@ -11,7 +11,7 @@ export default function Header() {
         <header className="bg-black text-white flex justify-around items-center sd:flex-col">
 
         {/**image logo a gauche navbar */}
-            <NavLink to={"/"} className="hidden md:block flex flex-col">
+            <NavLink to={"/"} className="hidden md:block flex-col">
                 <img src="src/assets/logo.webp" alt="logo image" className="w-25 h-25" />
             </NavLink>
 

@@ -15,12 +15,12 @@ export default function StreamerTwitch({ userConnected }) {
 
             {/**{userConnected ? (*/}
                 <div className="flex justify-around flex-col h-screen">
-                    <div className="flex flex-row gap-3">
-                        <img src="src/assets/banniere-altabichon.webp" className="h-100 w-auto" alt="image pub pour altabichon" title="banniere pub altabichon"/>
+                    <div className="flex sm:flex-row flex-col gap-3">
+                        <img src="src/assets/banniere-altabichon.webp" className="sm:h-100 h-[250px] w-auto" alt="image pub pour altabichon" title="banniere pub altabichon"/>
 
                         <div className="p-2 m-1"> 
                             
-                            <h3 className="text-2xl font-bold text-center uppercase p-3">Altaviran & PapyBichon </h3>
+                            <h3 className="sm:text-2xl font-bold text-center uppercase p-3">Altaviran & PapyBichon </h3>
                             <p>Le duo qui fait fondre Twitch !
                                 <br/>Bienvenue dans un univers où la bonne humeur, les fous rires et la bienveillance sont les maîtres mots. En solo ou en multi, sur des jeux chill ou juste pour papoter, ce couple de streamers vous accueille comme à la maison.
                                 <br/>
@@ -69,7 +69,7 @@ export default function StreamerTwitch({ userConnected }) {
                     </div>
                 </div>
 
-                    <hr className="w-80 h-0.5 m-auto text-white"/>
+                    <hr className="hidden sm:block w-80 h-0.5 m-auto text-white"/>
                 
                 
 
@@ -77,12 +77,12 @@ export default function StreamerTwitch({ userConnected }) {
                 <div className="flex justify-around flex-col gap-2 h-screen">
 
                     {/**image + texte */}
-                    <div className="flex flex-row">
-                        <img src="src/assets/banniere-jarlspunk.webp" className="h-100 w-auto" alt="image pub pour jarlspunk" title="banniere pub jarlspunk"/>
+                    <div className="flex sm:flex-row flex-col">
+                        <img src="src/assets/banniere-jarlspunk.webp" className="sm:h-100 h-[250px] w-auto" alt="image pub pour jarlspunk" title="banniere pub jarlspunk"/>
 
                         <div className="p-2 m-2"> 
                             {/**DESCRIPTIF DU STREAMER JARLSPUNK*/}
-                            <h3 className="text-2xl font-bold text-center uppercase p-3">Jarlspunk</h3>
+                            <h3 className="sm:text-2xl font-bold text-center uppercase p-3">Jarlspunk</h3>
                             <p>Jarlspunk t’embarque dans des aventures épiques entre chill, frissons et fous rires ! Que ce soit sur des jeux solo exigeants comme Dark Souls ou Elden Ring, des soirées multijoueur fun et immersives (Among Us, jeux d’horreur, etc.), il y en a pour tous les goûts !
                             <br/>
                                 Ici, c’est plus qu’un live : c’est une véritable communauté bienveillante, portée par un streamer à l’écoute et interactif avec son chat !

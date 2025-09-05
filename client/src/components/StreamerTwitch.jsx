@@ -4,6 +4,8 @@ import { FaInstagram } from "react-icons/fa";
 import { FaTwitch } from "react-icons/fa";
 import { FaDiscord } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import bannierealtabichon from "../assets/banniere-altabichon.webp";
+import bannierejarlspunk from "../assets/banniere-jarlspunk.webp";
 
 export default function StreamerTwitch({ userConnected }) {
     console.log(userConnected);
@@ -16,7 +18,7 @@ export default function StreamerTwitch({ userConnected }) {
             {/**{userConnected ? (*/}
                 <div className="flex justify-around flex-col h-screen">
                     <div className="flex sm:flex-row flex-col gap-3">
-                        <img src="src/assets/banniere-altabichon.webp" className="sm:h-100 h-[250px] w-auto" alt="image pub pour altabichon" title="banniere pub altabichon"/>
+                        <img src={bannierealtabichon} className="sm:h-100 h-[250px] w-auto" alt="image pub pour altabichon" title="banniere pub altabichon"/>
 
                         <div className="p-2 m-1"> 
                             
@@ -78,7 +80,7 @@ export default function StreamerTwitch({ userConnected }) {
 
                     {/**image + texte */}
                     <div className="flex sm:flex-row flex-col">
-                        <img src="src/assets/banniere-jarlspunk.webp" className="sm:h-100 h-[250px] w-auto" alt="image pub pour jarlspunk" title="banniere pub jarlspunk"/>
+                        <img src={bannierejarlspunk} className="sm:h-100 h-[250px] w-auto" alt="image pub pour jarlspunk" title="banniere pub jarlspunk"/>
 
                         <div className="p-2 m-2"> 
                             {/**DESCRIPTIF DU STREAMER JARLSPUNK*/}
@@ -125,21 +127,7 @@ export default function StreamerTwitch({ userConnected }) {
                             </div>
                         </div>
                     </div>
-                </div>
-            {/** ) : (*
-                <div>
-                    <h2>Bienvenue !</h2>
-                    <h3>
-                        Pour accéder à cette page, il te suffit de te connecter !
-                    </h3>
-
-                    <NavLink
-                        to={"/login"}
-                        className="button-blue">
-                        Se connecter
-                    </NavLink>
-                </div>
-            )} */}   
+                </div>  
         </section>
     );
 }

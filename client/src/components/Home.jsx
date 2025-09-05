@@ -191,13 +191,15 @@ export default function Home() {
               <div className="text-center flex justify-around items-center sm:flex-row flex-col">
                 <div className="p-2 m-2 text-center">
                   <h3 className="text-center font-bold uppercase">Jarlspunk</h3>
-                  <h3 className="text-center m-2 p-1 hidden sm:block">Les coups de coeurs de notre Duo :</h3>
-                  <p className="sm:hidden block">Découvre leurs coups du moment pour les jeux video, manga et animé !</p>
+                  <h3 className="text-center m-2 p-1 hidden sm:block">Les coups de coeurs du Jarl :</h3>
+                  <p className="sm:hidden block">Découvre les coups du moment de JarlSpunk pour les jeux video, manga et animé !</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
-                    <img src={logoJarl} className="w-50 h-auto text-center"/>
+                    <img src={logoJarl} 
+                      className="w-50 h-auto text-center"/>
                     <div className="text-center">
-                      <NavLink to={"/streamer"} className="button-blue px-1 py-1 hover:text-2xl hover:transition hover:duration-200">En savoir +</NavLink>
+                      <NavLink to={"/streamer"} 
+                        className="button-blue px-1 py-1 hover:text-2xl hover:transition hover:duration-200">En savoir +</NavLink>
                     </div>
                   </div>
                 </div>
@@ -207,18 +209,27 @@ export default function Home() {
                   <div className="flex justify-around items-center">
                     <div>
                       <p>Jeux Vidéo !</p>
-                      <img src={bg3} className="w-auto h-[120px] m-2" alt="image jeux video tales of shire" title="jeux video tales of shire"/>
+                      <img src={bg3} 
+                        className="w-auto h-[120px] m-2" 
+                        alt="image jeux video baldurs gate 3" 
+                        title="jeux video baldurs gate 3"/>
                     </div>
                     {/**Coup de coeur MANGA */}
                     <div>
                       <p>Manga !</p>
-                      <img src={berserkmanga} className="h-30 m-2" alt="image manga defense devil" title="manga defense devil"/>
+                      <img src={berserkmanga} 
+                        className="h-30 m-2" 
+                        alt="image manga berserk" 
+                        title="manga defense berserk"/>
                     </div>
 
                     {/**Coup de coeur ANIME */}
                     <div>
                       <p>Animé !</p>
-                      <img src={fullmetalalchemist} className="h-30 m-2" alt="image anime carnets de l'apoticaire" title="Animé Les carnets de l'apoticaire"/>
+                      <img src={fullmetalalchemist} 
+                        className="h-30 m-2" 
+                        alt="image anime Fullmetal Alchemist" 
+                        title="Animé Fullmetal Alchemist"/>
                     </div>
                   </div>
                 </div>

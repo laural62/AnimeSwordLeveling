@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import yukilaura from "../assets/yuki-laura.webp";
 
 export default function Apropos() {
     return(
@@ -6,7 +7,7 @@ export default function Apropos() {
             <h2 className="sm:text-3xl text-2xl">A propos de Nous !</h2>
             
             <div className="flex sm:flex-row flex-col items-center w-[auto] px-3">
-                <img src="src/assets/yuki-laura.webp" alt="image personnage feminin" title="personnage feminin manga" 
+                <img src={yukilaura} alt="image personnage feminin" title="personnage feminin manga" 
                 className="sm:h-[400px] sm:w-[250px] object-cover w-[150px]"/>
             
 

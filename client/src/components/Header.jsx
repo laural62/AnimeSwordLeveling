@@ -86,17 +86,16 @@ export default function Header() {
                                 <li><NavLink to="/librairy" className="hover:bg-gray-700 hover:underline">Librairy</NavLink></li>
                                 <li><NavLink to="/abonnement" className="hover:bg-gray-700 hover:underline">Abonnement</NavLink></li>
                                 <li><NavLink to="/contact" className="hover:bg-gray-700 hover:underline">Contact</NavLink></li>
-                                <li><NavLink 
-                                        to="/" 
-                                        className="text-white font-semibold hover:bg-red-900 hover:underline" 
-                                        onClick={logout}
-                                        >
-                                        Déconnexion
-                                    </NavLink>
-                                </li>
                             </ul>
                         </details>
-                    </li>    
+                    </li> 
+                    <NavLink 
+                        to="/" 
+                        className="text-white font-semibold hover:underline" 
+                        onClick={logout}
+                        >
+                        Déconnexion
+                    </NavLink>  
                 </>     
             ) : (
                 //navbar quand le client n'est pas connecter

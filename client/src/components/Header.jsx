@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
 import logo from "../assets/logo.webp";
+//import image deploiement
 
 export default function Header() {
 

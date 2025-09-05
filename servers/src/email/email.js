@@ -18,7 +18,7 @@ export const sendConfirmationEmail = async (email, token) => {
     from: process.env.EMAIL_USER,
     to: email,
     subject: "Confirmation d'inscription",
-    html: `<p>Bienvenue sur notre site! Cliquez sur le lien suivant pour valider votre inscription : <a href=${
+    html: `<p>Bienvenue sur notre site! Pour confirmer votre inscription sur le site AnimeSwordLeveling, cliquez sur le lien ci-joint : <a href=${
       process.env.MODE === "development"
        ? process.env.API_URL
         : process.env.DEPLOY_BACK_URL

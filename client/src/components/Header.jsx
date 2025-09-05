@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
+import logo from "../assets/logo.webp";
 
 export default function Header() {
 
@@ -12,7 +13,7 @@ export default function Header() {
 
         {/**image logo a gauche navbar */}
             <NavLink to={"/"} className="hidden md:block flex-col">
-                <img src="src/assets/logo.webp" alt="logo image" className="w-25 h-25" />
+                <img src={logo} alt="logo image" className="w-25 h-25" />
             </NavLink>
 
             {/* Bouton Burger visible uniquement sur mobile */}

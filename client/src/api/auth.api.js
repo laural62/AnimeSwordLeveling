@@ -1,6 +1,5 @@
 //import { BASE_URL } from "../utils/url";
 
-//change url
 const BASE_URL = import.meta.env.VITE_SERVER_URL;
 
 export async function signUp(values) {

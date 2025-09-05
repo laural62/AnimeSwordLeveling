@@ -114,7 +114,9 @@ export const verifyMail = async (req, res) => {
   } catch (error) {
     console.log(error);
     if (error.name === "TokenExpiredError") {
-      return res.redirect(`${process.env.CLIENT_URL}/register?message=error`);
+      return res.redirect(`${process.env.MODE === "development"
+            ? process.env.CLIENT_URL
+            : process.env.DEPLOY_FRONT_URL}/register?message=error`);
     }
   }
 };
@@ -146,4 +148,13 @@ export const currentUser = async (req, res) => {
   } else {
     res.status(400).json(null);
   }
+};
+
+export const logoutUser = async (req, res) => {
+  res.clearCookie("token", {
+    httpOnly: true,
+    secure: true,
+    sameSite: "None",
+  });
+  res.status(200).json({ message: "Déconnexion réussie" });
 };

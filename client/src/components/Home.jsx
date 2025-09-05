@@ -1,4 +1,12 @@
 import { NavLink } from "react-router-dom"
+import popyuki from "../assets/pop_yuki.webp";
+import persokazu from "../assets/perso-kazu-t.webp";
+import gaming from "../assets/gaming.webp";
+import imgtwitch from "../assets/img_twitch.webp";
+import sololeveling from "../assets/solo-leveling.webp";
+import jutjuso from "../assets/jutjuso-keisein.webp";
+import btspop from "../assets/pop-bts.webp";
+import altabichon from "../assets/altabichon.webp";
 
 export default function Home() {
     
@@ -25,7 +33,7 @@ export default function Home() {
             <div className="flex gap-3 m-3">
                   {/**section figurine pop */}
               <div> 
-                <img src="src/assets/pop_yuki.webp" alt="image figurine pop feminin" title="section figurine" className="w-50 h-auto"/>
+                <img src={popyuki} alt="image figurine pop feminin" title="section figurine" className="w-50 h-auto"/>
                 <h3 className="text-2xl text-center">Figurine et Pop !</h3>
                   <div>
                     <NavLink to={"/figurine"} className="button-blue px-1 py-1 hover:text-2xl">Découvrir</NavLink>
@@ -33,7 +41,7 @@ export default function Home() {
               </div>
                   {/**section anime manga */}
               <div>
-                <img src="src/assets/perso-kazu-t.webp" alt="image personnage anime manga" title="section anime et manga" className="w-50 h-auto"/>
+                <img src={persokazu} alt="image personnage anime manga" title="section anime et manga" className="w-50 h-auto"/>
                 <h3 className="text-2xl text-center">Animé et Manga !</h3>
                   <div>
                     <NavLink to={"/manga"} className="button-blue px-1 py-1 hover:text-2xl">Découvrir</NavLink>
@@ -45,7 +53,7 @@ export default function Home() {
             <div className="flex gap-5 m-3">
                     {/**section jeux video */}
               <div>
-                <img src="src/assets/gaming.webp" alt="image jeux video epee" title="section jeux video" className="w-50 h-auto"/>
+                <img src={gaming} alt="image jeux video epee" title="section jeux video" className="w-50 h-auto"/>
                 <h3 className="text-2xl text-center">Jeux vidéo !</h3>
                   <div>
                     <NavLink to={"/jeuxvideo"} className="button-blue px-1 py-1 hover:text-2xl">Découvrir</NavLink>
@@ -53,7 +61,7 @@ export default function Home() {
               </div>
                     {/**section stream */}
               <div className="flex items-center justify-center flex-col">
-                <img src="src/assets/img_twitch.webp" alt="image streamer" title="section streamers" 
+                <img src={imgtwitch} alt="image streamer" title="section streamers" 
                 className="sm:w-50 w-40 sm:h-auto h-50"/>
                 <h3 className="text-2xl text-center">Nos Streamers Partenaires !</h3>
                   <div>
@@ -74,7 +82,7 @@ export default function Home() {
 
               <div className="m-2 gap-3">
                 <div className="flex justify-center items-center flex-col">
-                  <img src="src/assets/solo-leveling.webp" className="rounded sm:h-75 h-[150px] object-cover" />
+                  <img src={sololeveling} className="rounded sm:h-75 h-[150px] object-cover" />
                   <p className="text-center sm:w-[450px] h-[100px]">Solo Leveling | ARISE OVERDRIVEANNONCE<br/> POUR LES GAMEURS...<br/>
                   Prochainement Solo Leveling fera son appartion comme jeux vidéo uniquement sur steam dans un premier temps. 
                   Un jeu d'action-rpg, faites évoluer votre perso rang E.</p>
@@ -89,11 +97,11 @@ export default function Home() {
                   <p className="w-50 flex justify-center h-[100px]">FIGURINE POP, DU GROUPE BTS,<br/>Jimin.<br/>
                     Sortie en Août 2025, à partir de 14€99.
                   </p>
-                  <img src="src/assets/pop-bts.webp" className="sm:w-auto w-30 sm:h-40 h-[100px] object-cover" />
+                  <img src={btspop} className="sm:w-auto w-30 sm:h-40 h-[100px] object-cover" />
                 </div>
 
                 <div className="flex flex-row justify-center p-2 m-2">
-                  <img src="src/assets/jutjuso-keisein.webp" className="h-[150px] sm:h-40 w-30 object-cover" />
+                  <img src={jutjuso} className="h-[150px] sm:h-40 w-30 object-cover" />
                   <p className="w-50 flex justify-center p-2 h-[100px]">JUJUTSU KAISEN : Trésor caché / Mort prématurée | Le Film.<br/><br/>Sortie prévu dans nos salles 
                   le 09 Août 2025.
                   </p>
@@ -116,7 +124,7 @@ export default function Home() {
                   <p className="sm:hidden block">Découvre leurs coups du moment pour les jeux video, manga et animé !</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
-                    <img src="src/assets/altabichon.webp" className="w-50 h-auto text-center"/>
+                    <img src={altabichon} className="w-50 h-auto text-center"/>
                     <div className="text-center">
                       <NavLink to={"/streamer"} className="button-blue px-1 py-1 hover:text-2xl hover:transition hover:duration-200">En savoir +</NavLink>
                     </div>

@@ -16,6 +16,8 @@ import FigurinePop from "./components/categorie/FigurinePop";
 import JeuxVideo from "./components/categorie/JeuxVideo";
 import { rootLoader } from "./loaders/rootLoader";
 import CompteUser from "./components/moncompte/CompteUser";
+import UserConnected from "./components/ProtectedRoutes/UserConnected";
+import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
 
 export const router = createBrowserRouter([
   {
@@ -29,15 +31,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <UserNotConnected>
+            <Login />
+          </UserNotConnected>
+        ),
       },
       {
         path: "/register",
-        element: <Register />,
+        element: (
+          <UserNotConnected>
+            <Register />
+          </UserNotConnected>
+        ),
       },
       {
         path: "/password",
-        element: <PasswordOublie />,
+        element: (
+          <UserNotConnected>
+            <PasswordOublie />
+          </UserNotConnected>
+        ),
       },
       {
         path: "/header",
@@ -53,15 +67,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "/nouveau",
-        element: <Nouveau />,
+        element: (
+          <UserConnected>
+            <Nouveau />
+          </UserConnected>
+        ),
       },
       {
         path: "/actu",
-        element: <Actu />,
+        element: (
+          <UserConnected>
+            <Actu />
+          </UserConnected>
+        ),
       },
       {
         path: "/streamer",
-        element: <StreamerTwitch />,
+        element: (
+          <UserConnected>
+            <StreamerTwitch />
+          </UserConnected>
+        ),
       },
       {
         path: "/apropos",
@@ -69,7 +95,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/convention",
-        element: <Convention />,
+        element: (
+          <UserConnected>
+            <Convention />
+          </UserConnected>
+        ),
       },
       {
         path: "/manga",
@@ -85,7 +115,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/compteuser",
-        element: <CompteUser/>,
+        element: (
+          <UserConnected>
+            <CompteUser/>
+          </UserConnected>
+          ),
       },
     ],
   },

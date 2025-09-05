@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
 import { createContext } from "react";
+import { useLoaderData } from "react-router-dom";
 
 const AuthContext = createContext();
 
 export function AuthProvider ({ children }) {
-    const [userConnected, setUserConnected] = useState(null);
+    const initialUser = useLoaderData();
+    const [userConnected, setUserConnected] = useState(initialUser);
 
     console.log(userConnected);
     const login = async (values) => {

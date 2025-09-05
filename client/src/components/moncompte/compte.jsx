@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function compte() {
+export default function Compte() {
   return (
-    <div>compte</div>
-    //faire une nav bar special gestion de compte
+    <div>Compte</div>
+    //faire une nav bar special mon compte
   )
 }

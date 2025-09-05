@@ -1,8 +1,7 @@
 import React from 'react'
 
-export default function abonnement() {
+export default function Abonnement() {
   return (
-    <div>abonnement</div>
-    //faire des cards flip abonnement payant à 2 formules différentes.
+    <div>Abonnement</div>
   )
 }

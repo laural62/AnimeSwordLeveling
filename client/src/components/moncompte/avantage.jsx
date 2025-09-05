@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function avantage() {
+export default function Avantage() {
   return (
-    <div>avantage</div>
+    <div>Avantage</div>
   )
 }

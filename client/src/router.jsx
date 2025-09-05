@@ -8,18 +8,21 @@ import StreamerTwitch from "./components/StreamerTwitch";
 import Apropos from "./components/Apropos";
 import Login from "./pages/Login";
 import Header from "./components/Header";
-import PasswordOublie from "./components/PasswordOublie";
+import PasswordOublie from "./pages/PasswordOublie";
 import Convention from "./components/Convention";
 import Register from "./pages/Register";
 import AnimeManga from "./components/categorie/AnimeManga";
 import FigurinePop from "./components/categorie/FigurinePop";
 import JeuxVideo from "./components/categorie/JeuxVideo";
-
+import { rootLoader } from "./loaders/rootLoader";
+import Compte from "./components/moncompte/Compte";
+import CompteUser from "./components/moncompte/CompteUser";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: rootLoader,
     children: [
       {
         index: true,
@@ -80,6 +83,14 @@ export const router = createBrowserRouter([
       {
         path: "/jeuxvideo",
         element: <JeuxVideo />,
+      },
+      {
+        path: "/moncompte",
+        element: <Compte />,
+      },
+      {
+        path: "/compteuser",
+        element: <CompteUser/>,
       },
     ],
   },

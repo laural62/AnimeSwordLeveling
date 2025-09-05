@@ -60,12 +60,6 @@ export default function Header() {
                         </NavLink>
                         
                     <NavLink 
-                        to={"/nouveau"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
-                        Nouveau !
-                        </NavLink>
-
-                    <NavLink 
                         to={"/actu"} 
                         className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
                         Actualites
@@ -76,11 +70,21 @@ export default function Header() {
                         className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
                         Streamer
                         </NavLink>
-
+                    
+                    <div class="inline-block relative w-64">
+                        <select class="block appearance-none w-full font-bold bg-black px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <option>Mon compte</option>
+                            <NavLink to="/compteuser"><option>Compte</option></NavLink>
+                            <NavLink><option>Avantage</option></NavLink>
+                            <NavLink><option>Librairy</option></NavLink>
+                            <NavLink><option>Convention</option></NavLink>
+                            <NavLink><option>Abonnement</option></NavLink>
+                        </select>
+                    </div>
                     <NavLink 
-                        to={"/convention"} 
+                        to={"/moncompte"} 
                         className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
-                        Convention
+                        Mon Compte
                     </NavLink>
 
                     <NavLink 
@@ -139,10 +143,9 @@ export default function Header() {
                     {userConnected ? (
                         <>
                         <NavLink to={"/"} onClick={() => setMenuOpen(false)}>Home</NavLink>
-                        <NavLink to={"/nouveau"} onClick={() => setMenuOpen(false)}>Nouveau !</NavLink>
                         <NavLink to={"/actu"} onClick={() => setMenuOpen(false)}>Actualités</NavLink>
                         <NavLink to={"/streamer"} onClick={() => setMenuOpen(false)}>Streamer</NavLink>
-                        <NavLink to={"/convention"} onClick={() => setMenuOpen(false)}>Convention</NavLink>
+                        <NavLink to={"/Compte"} onClick={() => setMenuOpen(false)}>Mon compte</NavLink>
                         <NavLink to={"/contact"} onClick={() => setMenuOpen(false)}>Contact</NavLink>
                         <NavLink to="/home" onClick={() => setMenuOpen(false)}>Déconnexion</NavLink>
                         </>

@@ -15,7 +15,6 @@ import AnimeManga from "./components/categorie/AnimeManga";
 import FigurinePop from "./components/categorie/FigurinePop";
 import JeuxVideo from "./components/categorie/JeuxVideo";
 import { rootLoader } from "./loaders/rootLoader";
-import Compte from "./components/moncompte/Compte";
 import CompteUser from "./components/moncompte/CompteUser";
 
 export const router = createBrowserRouter([
@@ -83,10 +82,6 @@ export const router = createBrowserRouter([
       {
         path: "/jeuxvideo",
         element: <JeuxVideo />,
-      },
-      {
-        path: "/moncompte",
-        element: <Compte />,
       },
       {
         path: "/compteuser",

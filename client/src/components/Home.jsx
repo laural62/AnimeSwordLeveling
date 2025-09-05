@@ -7,6 +7,16 @@ import sololeveling from "../assets/solo-leveling.webp";
 import jutjuso from "../assets/jutjuso-keisein.webp";
 import btspop from "../assets/pop-bts.webp";
 import altabichon from "../assets/altabichon.webp";
+import talesofshire from "../assets/talesofshire.webp";
+import defensedevil from "../assets/defensedevil.webp";
+import carnetdelapo from "../assets/carnetdelapo.webp";
+import ballxspit from "../assets/ballxspit.webp";
+import mangaonepiece from "../assets/manga-onepiece.webp";
+import onepiece from "../assets/onepiece.webp";
+import bg3 from "../assets/baldurs-gate-3.avif";
+import berserkmanga from "../assets/berserk-manga.webp";
+import fullmetalalchemist from "../assets/fullmetal-alchemist.webp";
+import logoJarl from "../assets/logoJarl.webp";
 
 export default function Home() {
     
@@ -137,18 +147,18 @@ export default function Home() {
                     <div>
                       <h3 className="text-center text-1xl font-bold">Altaviran</h3>
                       <p>Jeux Vidéo !</p>
-                      <img src="src/assets/talesofshire.webp" className="w-50 h-auto m-2" alt="image jeux video tales of shire" title="jeux video tales of shire"/>
+                      <img src={talesofshire} className="w-50 h-auto m-2" alt="image jeux video tales of shire" title="jeux video tales of shire"/>
                     </div>
                     {/**Coup de coeur MANGA */}
                     <div>
                       <p>Manga !</p>
-                      <img src="src/assets/defensedevil.webp" className="h-30 m-2" alt="image manga defense devil" title="manga defense devil"/>
+                      <img src={defensedevil} className="h-30 m-2" alt="image manga defense devil" title="manga defense devil"/>
                     </div>
 
                     {/**Coup de coeur ANIME */}
                     <div>
                       <p>Animé !</p>
-                      <img src="src/assets/carnetdelapo.webp" className="h-30 m-2" alt="image anime carnets de l'apoticaire" title="Animé Les carnets de l'apoticaire"/>
+                      <img src={carnetdelapo} className="h-30 m-2" alt="image anime carnets de l'apoticaire" title="Animé Les carnets de l'apoticaire"/>
                     </div>
                   </div>
         
@@ -157,19 +167,19 @@ export default function Home() {
                     <div>
                       <h3 className="text-center text-1xl font-bold">PapyBichon</h3>
                       <p>Jeux Vidéo !</p>
-                      <img src="src/assets/ballxspit.webp" className="w-50 h-auto m-2" alt="image jeux video ball x spit" title="jeux video ball x spit"/>
+                      <img src={ballxspit} className="w-50 h-auto m-2" alt="image jeux video ball x spit" title="jeux video ball x spit"/>
                     </div>
 
                     {/**Coup de coeur du MANGA */}
                     <div>
                       <p>Manga !</p>
-                      <img src="src/assets/manga-onepiece.webp" className="h-30 m-2" alt="image manga one piece" title="manga one piece"/>
+                      <img src={mangaonepiece} className="h-30 m-2" alt="image manga one piece" title="manga one piece"/>
                     </div>
 
                     {/**Coup de coeur de l'ANIME */}
                     <div>
                       <p>Animé !</p>
-                      <img src="src/assets/onepiece.webp" className="h-30 m-2" alt="image anime one piece" title="Animé one piece"/>
+                      <img src={onepiece} className="h-30 m-2" alt="image anime one piece" title="Animé one piece"/>
                     </div>
                   </div>
                 </div>
@@ -185,7 +195,7 @@ export default function Home() {
                   <p className="sm:hidden block">Découvre leurs coups du moment pour les jeux video, manga et animé !</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
-                    <img src="src/assets/logoJarl.webp" className="w-50 h-auto text-center"/>
+                    <img src={logoJarl} className="w-50 h-auto text-center"/>
                     <div className="text-center">
                       <NavLink to={"/streamer"} className="button-blue px-1 py-1 hover:text-2xl hover:transition hover:duration-200">En savoir +</NavLink>
                     </div>
@@ -197,18 +207,18 @@ export default function Home() {
                   <div className="flex justify-around items-center">
                     <div>
                       <p>Jeux Vidéo !</p>
-                      <img src="src/assets/baldurs-gate-3.avif" className="w-auto h-[120px] m-2" alt="image jeux video tales of shire" title="jeux video tales of shire"/>
+                      <img src={bg3} className="w-auto h-[120px] m-2" alt="image jeux video tales of shire" title="jeux video tales of shire"/>
                     </div>
                     {/**Coup de coeur MANGA */}
                     <div>
                       <p>Manga !</p>
-                      <img src="src/assets/berserk-manga.webp" className="h-30 m-2" alt="image manga defense devil" title="manga defense devil"/>
+                      <img src={berserkmanga} className="h-30 m-2" alt="image manga defense devil" title="manga defense devil"/>
                     </div>
 
                     {/**Coup de coeur ANIME */}
                     <div>
                       <p>Animé !</p>
-                      <img src="src/assets/fullmetal-alchemist.webp" className="h-30 m-2" alt="image anime carnets de l'apoticaire" title="Animé Les carnets de l'apoticaire"/>
+                      <img src={fullmetalalchemist} className="h-30 m-2" alt="image anime carnets de l'apoticaire" title="Animé Les carnets de l'apoticaire"/>
                     </div>
                   </div>
                 </div>

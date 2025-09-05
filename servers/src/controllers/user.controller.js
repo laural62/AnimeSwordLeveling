@@ -72,6 +72,20 @@ export const login = async (req, res) => {
     return res.status(400).json({ message: "Mot de passe incorrect" });
   }
 
+   // 3 - ajout des données
+
+  const token = jwt.sign({}, process.env.SECRET_KEY, {
+    subject: user._id.toString(),
+    expiresIn: "7d",
+    algorithm: "HS256",
+  });
+
+  res.cookie("token", token, {
+    httpOnly: true,
+    secure: false,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+  });
+  
   // Si tout est bon
   res.status(200).json({ user, message: "Connexion réussie" });
 };
@@ -86,7 +100,7 @@ export const verifyMail = async (req, res) => {
     console.log(tempUser);
 
     if (!tempUser) {
-      return res.redirect(`${process.env.CLIENT_URL}/register?message=error`);
+      return res.redirect(`${process.env.MODE === "development" ? process.env.CLIENT_URL : process.env.DEPLOY_FRONT_URL}/register?message=error`);
     }
 
     const newUser = new User({
@@ -96,11 +110,40 @@ export const verifyMail = async (req, res) => {
     });
     await newUser.save();
     await TempUser.deleteOne({ email: tempUser.email });
-    res.redirect(`${process.env.CLIENT_URL}/register?message=success`);
+    res.redirect(`${process.env.MODE === "development" ? process.env.CLIENT_URL : process.env.DEPLOY_FRONT_URL}/register?message=success`);
   } catch (error) {
     console.log(error);
     if (error.name === "TokenExpiredError") {
       return res.redirect(`${process.env.CLIENT_URL}/register?message=error`);
     }
+  }
+};
+
+export const currentUser = async (req, res) => {
+  const { token } = req.cookies;
+  //console.log(token);
+
+  if (token) {
+    try {
+      //verifie en decodant le token avec la clé secrète
+      const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
+
+      console.log(decodedToken);
+
+      //récupére l'utilisateur en se servant de l'id du token
+      const currentUser = await User.findById(decodedToken.sub);
+
+      console.log(currentUser);
+
+      if (currentUser) {
+        res.status(200).json(currentUser);
+      } else {
+        res.status(400).json(null);
+      }
+    } catch (error) {
+      res.status(400).json(null);
+    }
+  } else {
+    res.status(400).json(null);
   }
 };

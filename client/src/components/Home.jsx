@@ -101,8 +101,8 @@ export default function Home() {
               <br/>
               <hr className="w-100 m-auto text-white hidden"/>
 
-              <div class="card mb-3">
-                <img src={parismanga} class="card-img-top" alt="affiche paris manga 2025" title="affiche paris manga 2025"/>
+              <div class="card mb-3 text-center object-cover">
+                <img src={parismanga} class="card-img-top h-[400px]" alt="affiche paris manga 2025" title="affiche paris manga 2025"/>
                   <div class="card-body">
                     <h5 class="card-title">Paris Manga 2025 ! By TGS</h5>
                     <p class="card-text">Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, le salon de la pop culture et de la culture geek, jeux vidéo, manga, comics, bd, science fiction, cinéma et série tv, culture japonaise.</p>

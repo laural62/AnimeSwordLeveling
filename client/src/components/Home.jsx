@@ -2,10 +2,9 @@ import { NavLink } from "react-router-dom"
 import popyuki from "../assets/pop_yuki.webp";
 import persokazu from "../assets/perso-kazu-t.webp";
 import gaming from "../assets/gaming.webp";
-import imgtwitch from "../assets/img_twitch.webp";
+import streamer from "../assets/streamer.webp";
 import sololeveling from "../assets/solo-leveling.webp";
-import jutjuso from "../assets/jutjuso-keisein.webp";
-import btspop from "../assets/pop-bts.webp";
+import parismanga from "../assets/paris-manga2025.webp";
 import altabichon from "../assets/altabichon.webp";
 import talesofshire from "../assets/talesofshire.webp";
 import defensedevil from "../assets/defensedevil.webp";
@@ -71,7 +70,7 @@ export default function Home() {
               </div>
                     {/**section stream */}
               <div className="flex items-center justify-center flex-col">
-                <img src={imgtwitch} alt="image streamer" title="section streamers" 
+                <img src={streamer} alt="image streamer" title="section streamers" 
                 className="sm:w-50 w-40 sm:h-auto h-50"/>
                 <h3 className="text-2xl text-center">Nos Streamers Partenaires !</h3>
                   <div>
@@ -102,20 +101,12 @@ export default function Home() {
               <br/>
               <hr className="w-100 m-auto text-white hidden"/>
 
-              <div className="flex items-center justify-center sm:flex-row flex-col m-2 gap-4">
-                <div className="flex flex-row p-2 m-2">
-                  <p className="w-50 flex justify-center h-[100px]">FIGURINE POP, DU GROUPE BTS,<br/>Jimin.<br/>
-                    Sortie en Août 2025, à partir de 14€99.
-                  </p>
-                  <img src={btspop} className="sm:w-auto w-30 sm:h-40 h-[100px] object-cover" />
-                </div>
-
-                <div className="flex flex-row justify-center p-2 m-2">
-                  <img src={jutjuso} className="h-[150px] sm:h-40 w-30 object-cover" />
-                  <p className="w-50 flex justify-center p-2 h-[100px]">JUJUTSU KAISEN : Trésor caché / Mort prématurée | Le Film.<br/><br/>Sortie prévu dans nos salles 
-                  le 09 Août 2025.
-                  </p>
-                </div>
+              <div class="card mb-3">
+                <img src={parismanga} class="card-img-top" alt="affiche paris manga 2025" title="affiche paris manga 2025"/>
+                  <div class="card-body">
+                    <h5 class="card-title">Paris Manga 2025 ! By TGS</h5>
+                    <p class="card-text">Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, le salon de la pop culture et de la culture geek, jeux vidéo, manga, comics, bd, science fiction, cinéma et série tv, culture japonaise.</p>
+                  </div>
               </div>
           </div>
           <hr className="w-50 m-auto text-white hidden md:block"/>
@@ -131,7 +122,7 @@ export default function Home() {
                 <div className="p-2 m-2 text-center">
                   <h3 className="text-center font-bold uppercase">Alta & Bichon</h3>
                   <h3 className="text-center m-2 p-1 hidden sm:block">Les coups de coeurs de notre Duo :</h3>
-                  <p className="sm:hidden block">Découvre leurs coups du moment pour les jeux video, manga et animé !</p>
+                  <p className="sm:hidden block">Ils nous partagent leurs différent coups de coeur du moment ! Et vous quel sont les vôtres ?</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
                     <img src={altabichon} className="w-50 h-auto text-center"/>
@@ -192,7 +183,7 @@ export default function Home() {
                 <div className="p-2 m-2 text-center">
                   <h3 className="text-center font-bold uppercase">Jarlspunk</h3>
                   <h3 className="text-center m-2 p-1 hidden sm:block">Les coups de coeurs du Jarl :</h3>
-                  <p className="sm:hidden block">Découvre les coups du moment de JarlSpunk pour les jeux video, manga et animé !</p>
+                  <p className="sm:hidden block">Il partage ses préférences du moment pour l'animé, le manga et le jeux vidéo ! Les connaissez vous ? n'hésitez pas à découvrir la suggestions ci dessous.</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
                     <img src={logoJarl} 

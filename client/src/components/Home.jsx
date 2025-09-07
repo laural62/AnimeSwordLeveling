@@ -83,46 +83,46 @@ export default function Home() {
         </section>
 
       {/**Section Nouveautés mixtes, actualiser tous les quinze jours, "Nouveau" */}
-        <section id="actu" className="h-screen bg-black text-white flex justify-center flex-col items-center">
+        <section className="h-screen bg-black text-white flex justify-center flex-col items-center">
           <div>
-            <div className="sm:text-2xl flex items-center justify-center">
-              <h2 className="sm:text-3xl border-2 border-gray-300 sm:w-fit m-1">Actualités !</h2>
+            <div className="flex items-center justify-center">
+              <h2 className="sm:text-3xl font-bold border-2 border-gray-300 sm:w-fit m-1">Actualités !</h2>
             </div>
 
-              <div className="m-2 gap-3">
+              <div className="m-1 gap-3">
                 <div className="flex justify-center items-center flex-col">
                   <img src={sololeveling} className="rounded sm:h-75 h-[150px] object-cover" />
-                  <p className="text-center sm:w-[450px] h-[100px]">Solo Leveling | ARISE OVERDRIVEANNONCE<br/> POUR LES GAMEURS...<br/>
-                  Prochainement Solo Leveling fera son appartion comme jeux vidéo uniquement sur steam dans un premier temps. 
-                  Un jeu d'action-rpg, faites évoluer votre perso rang E.</p>
+                  <p className="text-center sm:w-[900px] h-[100px]">Solo Leveling | ARISE OVERDRIVEANNONCE<br/>
+                  Prochainement Solo Leveling fera son appartion comme jeux vidéo uniquement sur steam. Restez Connecté pour en savoir plus.</p>
                 </div>
               </div>
 
-              <br/>
-              <hr className="w-100 m-auto text-white hidden"/>
-
-              <div class="card mb-3 text-center object-cover">
-                <img src={parismanga} class="card-img-top h-[400px]" alt="affiche paris manga 2025" title="affiche paris manga 2025"/>
-                  <div class="card-body">
-                    <h5 class="card-title">Paris Manga 2025 ! By TGS</h5>
-                    <p class="card-text">Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, le salon de la pop culture et de la culture geek, jeux vidéo, manga, comics, bd, science fiction, cinéma et série tv, culture japonaise.</p>
-                  </div>
+              <div className="m-1 gap-3">
+                <div className="flex justify-center items-center flex-col">
+                  <img src={parismanga} className="rounded sm:h-75 h-[150px] object-cover" />
+                  <p className="text-center sm:w-[700px] h-[100px]">Paris Manga 2025 ! By TGS<br/>
+                  Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, 
+                      le salon de la pop culture et de la culture geek...</p>
+                </div>
               </div>
+              <br/>
+              <br/>
           </div>
-          <hr className="w-50 m-auto text-white hidden md:block"/>
         </section>
 
         {/**section des coups de coeurs de nos streamers partenaires ! avec 4 image par streamer */}
-        <section className="bg-black text-white h-screen flex flex-col items-center justify-center">
-          <h2 className="sm:text-1xl font-bold p-2 border-1 border-gray-300">Coups de coeur des streamers !</h2>
-
+        <section className="h-screen bg-black text-white flex flex-col items-center justify-center ">
+          <div>
+            <h2 className="sm:text-2xl font-bold p-2 border-1 border-gray-300">Coups de coeur des streamers !</h2>
+          </div>
             <div className="flex justify-center items-center flex-col gap-2">
               {/**Coup de coeur du STREAMEUR PARTENAIRE */}
               <div className="text-center flex justify-around items-center sm:flex-row flex-col">
                 <div className="p-2 m-2 text-center">
                   <h3 className="text-center font-bold uppercase">Alta & Bichon</h3>
-                  <h3 className="text-center m-2 p-1 hidden sm:block">Les coups de coeurs de notre Duo :</h3>
-                  <p className="sm:hidden block">Ils nous partagent leurs différent coups de coeur du moment ! Et vous quel sont les vôtres ?</p>
+                  <h3 className="text-center m-2 p-1 hidden sm:block sm:w-[500px]">Ils nous partagent leurs différent coups de coeur du moment ! Et vous quel 
+                    sont les vôtres ?</h3>
+                  <p className="sm:hidden block">Découvrez notre duo de streamer sur des jeux chill, rire et bétise !</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
                     <img src={altabichon} className="w-50 h-auto text-center"/>
@@ -182,8 +182,9 @@ export default function Home() {
               <div className="text-center flex justify-around items-center sm:flex-row flex-col">
                 <div className="p-2 m-2 text-center">
                   <h3 className="text-center font-bold uppercase">Jarlspunk</h3>
-                  <h3 className="text-center m-2 p-1 hidden sm:block">Les coups de coeurs du Jarl :</h3>
-                  <p className="sm:hidden block">Il partage ses préférences du moment pour l'animé, le manga et le jeux vidéo ! Les connaissez vous ? n'hésitez pas à découvrir la suggestions ci dessous.</p>
+                  <h3 className="text-center m-2 p-1 hidden sm:block sm:w-[500px]">Il nous partage ses préférences du moment pour l'animé, le manga et le jeux vidéo
+                     ! Les connaissez vous ? n'hésitez pas à découvrir la suggestions ci dessous.</h3>
+                  <p className="sm:hidden block">Venez découvrir le streamer sur des jeux d'horreur en solo ou multi, avec du papotage !</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
                     <img src={logoJarl} 

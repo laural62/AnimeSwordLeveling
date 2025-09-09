@@ -1,15 +1,19 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/*typographie police uniquement Titre et h2*/
 h1,h2{
     font-family: "Cinzel Decorative", serif;
 }
+/*typography police dans tout le body hors h1, h2*/
 body, header, footer{
     font-family: "Montserrat", sans-serif;
 }
+/*background image*/
 .bg-anime{
     background-image: url(assets/bg-animeswordleveling.webp);
     background-repeat: no-repeat;
 }
+/*reglage bouton bleus*/
 .button-blue{
     background-color:#194558;
     color: white;
@@ -18,15 +22,26 @@ body, header, footer{
     border-color: #e4e4e4;
     transition: 0.50s;
 }
+/*background color de la page figurine pop*/
 .bg-pop{
     background-color:#5b0e0e;
     color: white;
 }
+/*background color page anime et manga*/
 .bg-manga{
     background-color:#63265f;
     color: white;
 }
+/*background color page jeux video*/
 .bg-gaming{
     background-color: #194558;
     color: white;
+}
+/*background color bleu canard*/
+.bg-ducky{
+    background-color:#194558;
+}
+/*couleur bordure bleu ducky*/
+.border-blue1{
+    border-color: #194558;
 }

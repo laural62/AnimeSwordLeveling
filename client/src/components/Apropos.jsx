@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import yukilaura from "../assets/yuki-laura.webp";
+import Reseaux from "../pages/Reseaux";
 
 export default function Apropos() {
     return(
@@ -8,12 +9,12 @@ export default function Apropos() {
             
             <div className="flex sm:flex-row flex-col items-center w-[auto] px-3">
                 <img src={yukilaura} alt="image personnage feminin" title="personnage feminin manga" 
-                className="sm:h-[400px] sm:w-[250px] object-cover w-[150px]"/>
+                className="sm:h-[400px] sm:w-[250px] object-cover w-[100px]"/>
             
 
                 {/**création d"un paragraphe descriptif version tablette et pc*/}
                 <div>
-                    <h3 className="text-2xl text-center underline">Voici notre histoire et qui nous sommes !</h3>    
+                    <h3 className="sm:text-2xl text-center underline">Voici notre histoire et qui nous sommes !</h3>    
                     <p className="hidden sm:block text-center p-2 m-2">
                         Créé en novembre 2025 par Laura Laisné, <span className="font-bold">Anime Sword Leveling</span> est un site dédié aux passionnés de gaming et de manga. 
                         Notre objectif est de rassembler en un seul endroit toutes les informations du moment, qu’il s’agisse de l’actualité 
@@ -75,6 +76,7 @@ export default function Apropos() {
                 </NavLink>
             </div>
             
+            <Reseaux />
         </section>
     );
 }

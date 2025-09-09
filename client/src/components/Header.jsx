@@ -73,6 +73,12 @@ export default function Header() {
                         Streamer
                     </NavLink>
 
+                    <NavLink 
+                        to={"/apropos"} 
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        A propos
+                    </NavLink>
+
                     <li className="list-none font-bold">
                         <details> {/**details met une fleche pour la liste déroulante */}
                             <summary>Mon Compte</summary> {/**summary sert a ouvrir et fermer le block, soit un titre cliquable */}
@@ -142,6 +148,7 @@ export default function Header() {
                         <NavLink to={"/"} onClick={() => setMenuOpen(false)}>Home</NavLink>
                         <NavLink to={"/actu"} onClick={() => setMenuOpen(false)}>Actualités</NavLink>
                         <NavLink to={"/streamer"} onClick={() => setMenuOpen(false)}>Streamer</NavLink>
+                        <NavLink to={"/sapropos"} onClick={() => setMenuOpen(false)}>A propos</NavLink>
                         <NavLink to={"/Compte"} onClick={() => setMenuOpen(false)}>Mon compte</NavLink>
                         <NavLink to={"/contact"} onClick={() => setMenuOpen(false)}>Contact</NavLink>
                         <NavLink to="/home" onClick={() => setMenuOpen(false)}>Déconnexion</NavLink>

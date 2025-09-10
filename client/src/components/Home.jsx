@@ -214,7 +214,7 @@ export default function Home() {
                       <img src={berserkmanga} 
                         className="w-25 m-2" 
                         alt="image manga berserk" 
-                        title="manga defense berserk"/>
+                        title="manga berserk"/>
                     </div>
 
                     {/**Coup de coeur ANIME */}

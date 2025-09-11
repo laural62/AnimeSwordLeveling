@@ -18,6 +18,7 @@ import { rootLoader } from "./loaders/rootLoader";
 import CompteUser from "./components/moncompte/CompteUser";
 import UserConnected from "./components/ProtectedRoutes/UserConnected";
 import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
+import MonAbonnement from "./components/moncompte/MonAbonnement";
 
 export const router = createBrowserRouter([
   {
@@ -118,6 +119,14 @@ export const router = createBrowserRouter([
         element: (
           <UserConnected>
             <CompteUser/>
+          </UserConnected>
+        ),
+      },
+      {
+        path: "/monabonnement",
+        element: (
+          <UserConnected>
+            <MonAbonnement />
           </UserConnected>
         ),
       },

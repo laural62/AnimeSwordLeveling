@@ -16,7 +16,6 @@ import FigurinePop from "./components/categorie/FigurinePop";
 import JeuxVideo from "./components/categorie/JeuxVideo";
 import { rootLoader } from "./loaders/rootLoader";
 import CompteUser from "./components/moncompte/CompteUser";
-import Librairy from "./components/moncompte/Librairy";
 import UserConnected from "./components/ProtectedRoutes/UserConnected";
 import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
 import Avantage from "./components/moncompte/Avantage";
@@ -122,7 +121,7 @@ export const router = createBrowserRouter([
           <UserConnected>
             <CompteUser/>
           </UserConnected>
-          ),
+        ),
       },
       {
         path: "/avantage",
@@ -130,15 +129,7 @@ export const router = createBrowserRouter([
           <UserConnected>
             <Avantage />
           </UserConnected>
-          ),
-      },
-      {
-        path: "/librairy",
-        element: (
-          <UserConnected>
-            <Librairy />
-          </UserConnected>
-          ),
+        ),
       },
       {
         path: "/abonnement",
@@ -146,7 +137,7 @@ export const router = createBrowserRouter([
           <UserConnected>
             <Abonnement />
           </UserConnected>
-          ),
+        ),
       },
     ],
   },

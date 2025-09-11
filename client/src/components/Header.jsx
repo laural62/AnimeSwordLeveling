@@ -89,7 +89,7 @@ export default function Header() {
                                             Compte
                                 </NavLink></li>
                                 <li><NavLink to="/avantage" className="hover:bg-gray-700 hover:underline">Avantage</NavLink></li>
-                                <li><NavLink to="/librairie" className="hover:bg-gray-700 hover:underline">Librairie</NavLink></li>
+                                <li><NavLink to="/librairy" className="hover:bg-gray-700 hover:underline">Librairie</NavLink></li>
                                 <li><NavLink to="/abonnement" className="hover:bg-gray-700 hover:underline">Abonnement</NavLink></li>
                                 <li><NavLink to="/contact" className="hover:bg-gray-700 hover:underline">Contact</NavLink></li>
                             </ul>
@@ -159,7 +159,7 @@ export default function Header() {
                                                 Compte
                                     </NavLink></li>
                                     <li><NavLink to={"/avantage"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Avantage</NavLink></li>
-                                    <li><NavLink to={"/librairie"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Librairie</NavLink></li>
+                                    <li><NavLink to={"/librairy"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Librairie</NavLink></li>
                                     <li><NavLink to={"/abonnement"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Abonnement</NavLink></li>
                                     <li><NavLink to={"/contact"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Contact</NavLink></li>
                                 </ul>

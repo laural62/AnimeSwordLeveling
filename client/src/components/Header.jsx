@@ -89,7 +89,7 @@ export default function Header() {
                                             Compte
                                 </NavLink></li>
                                 <li><NavLink to="/avantage" className="hover:bg-gray-700 hover:underline">Avantage</NavLink></li>
-                                <li><NavLink to="/librairy" className="hover:bg-gray-700 hover:underline">Librairy</NavLink></li>
+                                <li><NavLink to="/librairie" className="hover:bg-gray-700 hover:underline">Librairie</NavLink></li>
                                 <li><NavLink to="/abonnement" className="hover:bg-gray-700 hover:underline">Abonnement</NavLink></li>
                                 <li><NavLink to="/contact" className="hover:bg-gray-700 hover:underline">Contact</NavLink></li>
                             </ul>
@@ -148,9 +148,23 @@ export default function Header() {
                         <NavLink to={"/"} onClick={() => setMenuOpen(false)}>Home</NavLink>
                         <NavLink to={"/actu"} onClick={() => setMenuOpen(false)}>Actualités</NavLink>
                         <NavLink to={"/streamer"} onClick={() => setMenuOpen(false)}>Streamer</NavLink>
-                        <NavLink to={"/sapropos"} onClick={() => setMenuOpen(false)}>A propos</NavLink>
-                        <NavLink to={"/Compte"} onClick={() => setMenuOpen(false)}>Mon compte</NavLink>
-                        <NavLink to={"/contact"} onClick={() => setMenuOpen(false)}>Contact</NavLink>
+                        <NavLink to={"/apropos"} onClick={() => setMenuOpen(false)}>A propos</NavLink>
+                        <li className="list-none font-bold">
+                            <details> {/**details met une fleche pour la liste déroulante */}
+                                <summary>Mon Compte</summary> {/**summary sert a ouvrir et fermer le block, soit un titre cliquable */}
+                                <ul className="p-2 bg-base-100 rounded-t-none">
+                                    <li><NavLink 
+                                            to={"/compteuser"} onClick={() => setMenuOpen(false)}
+                                            className="hover:bg-gray-700 hover:underline">
+                                                Compte
+                                    </NavLink></li>
+                                    <li><NavLink to={"/avantage"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Avantage</NavLink></li>
+                                    <li><NavLink to={"/librairie"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Librairie</NavLink></li>
+                                    <li><NavLink to={"/abonnement"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Abonnement</NavLink></li>
+                                    <li><NavLink to={"/contact"} onClick={() => setMenuOpen(false)} className="hover:bg-gray-700 hover:underline">Contact</NavLink></li>
+                                </ul>
+                            </details>
+                        </li>
                         <NavLink to="/home" onClick={() => setMenuOpen(false)}>Déconnexion</NavLink>
                         </>
                     ) : (

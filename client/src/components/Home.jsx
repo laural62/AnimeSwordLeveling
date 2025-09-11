@@ -83,9 +83,9 @@ export default function Home() {
         </section>
 
       {/**Section Nouveautés mixtes, actualiser tous les quinze jours, "Nouveau" */}
-        <section className="h-screen bg-black text-white flex justify-center flex-col items-center">
+        <section className="h-screen bg-black text-white flex justify-center flex-col items-center ">
           <div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center m-3">
               <h2 className="sm:text-3xl text-2xl border-2 py-2 px-4 border-gray-300 w-fit self-center">Actualités !</h2>
             </div>
 

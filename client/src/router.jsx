@@ -133,7 +133,7 @@ export const router = createBrowserRouter([
           ),
       },
       {
-        path: "/librairie",
+        path: "/librairy",
         element: (
           <UserConnected>
             <Librairy />

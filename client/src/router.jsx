@@ -18,8 +18,6 @@ import { rootLoader } from "./loaders/rootLoader";
 import CompteUser from "./components/moncompte/CompteUser";
 import UserConnected from "./components/ProtectedRoutes/UserConnected";
 import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
-import Avantage from "./components/moncompte/Avantage";
-import Abonnement from "./components/moncompte/Abonnement";
 
 export const router = createBrowserRouter([
   {
@@ -120,22 +118,6 @@ export const router = createBrowserRouter([
         element: (
           <UserConnected>
             <CompteUser/>
-          </UserConnected>
-        ),
-      },
-      {
-        path: "/avantage",
-        element: (
-          <UserConnected>
-            <Avantage />
-          </UserConnected>
-        ),
-      },
-      {
-        path: "/abonnement",
-        element: (
-          <UserConnected>
-            <Abonnement />
           </UserConnected>
         ),
       },

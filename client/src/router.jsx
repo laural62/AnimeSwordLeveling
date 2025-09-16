@@ -7,7 +7,6 @@ import StreamerTwitch from "./components/StreamerTwitch";
 import Apropos from "./components/Apropos";
 import Login from "./pages/Login";
 import Header from "./components/Header";
-import PasswordOublie from "./pages/PasswordOublie";
 import Convention from "./components/Convention";
 import Register from "./pages/Register";
 import AnimeManga from "./components/categorie/AnimeManga";
@@ -18,6 +17,8 @@ import CompteUser from "./components/moncompte/CompteUser";
 import UserConnected from "./components/ProtectedRoutes/UserConnected";
 import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
 import MonAbonnement from "./components/moncompte/MonAbonnement";
+import ResetPassword from "./pages/ResetPassword";
+import ForgotPassword from "./pages/ForgotPassword";
 
 export const router = createBrowserRouter([
   {
@@ -42,14 +43,6 @@ export const router = createBrowserRouter([
         element: (
           <UserNotConnected>
             <Register />
-          </UserNotConnected>
-        ),
-      },
-      {
-        path: "/password",
-        element: (
-          <UserNotConnected>
-            <PasswordOublie />
           </UserNotConnected>
         ),
       },
@@ -120,6 +113,14 @@ export const router = createBrowserRouter([
             <MonAbonnement />
           </UserConnected>
         ),
+      },
+      {
+        path: "/forgotpassword",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/resetpassword",
+        element: <ResetPassword />,
       },
     ],
   },

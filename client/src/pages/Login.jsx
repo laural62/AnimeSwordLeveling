@@ -108,7 +108,7 @@ export default function Login() {
                 </button>
 
                 <div className="text-center">
-                    <NavLink to={"/password"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200">Mot de passe oubliée ?</NavLink>
+                    <NavLink to={"/forgotpassword"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200">Mot de passe oubliée ?</NavLink>
                 </div>
 
                 <div className="text-center">

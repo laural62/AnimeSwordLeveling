@@ -3,19 +3,27 @@ import yukilaura from "../assets/yuki-laura.webp";
 import Reseaux from "../pages/Reseaux";
 
 export default function Apropos() {
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth", // défilement fluide
+        });
+    };
+
     return(
-        <section className="bg-black text-white flex-col sm:h-screen h-[80vh] flex justify-center items-center px-2 sm:gap-4">
+        <section className="bg-black text-white flex-col sm:h-screen h-[80vh] flex justify-center items-center px-2 sm:gap-3">
             <h2 className="sm:text-3xl text-2xl">A propos de Nous !</h2>
             
-            <div className="flex sm:flex-row flex-col items-center w-[auto] px-3">
+            <div className="flex sm:flex-row flex-col items-center px-3">
                 <img src={yukilaura} alt="image personnage feminin" title="personnage feminin manga" 
-                className="sm:h-[400px] sm:w-[250px] object-cover w-[100px]"/>
+                className="sm:w-[250px] object-cover w-[100px]"/>
             
 
                 {/**création d"un paragraphe descriptif version tablette et pc*/}
-                <div>
-                    <h3 className="sm:text-2xl text-center underline">Voici notre histoire et qui nous sommes !</h3>    
-                    <p className="hidden sm:block text-center p-2 m-2">
+                <div className="sm:text-wrap sm:w-[700px]">
+                    <h3 className="sm:text-2xl underline">Voici notre histoire et qui nous sommes !</h3>    
+                    <p className="hidden sm:block p-2 m-2">
                         Créé en novembre 2025 par Laura Laisné, <span className="font-bold">Anime Sword Leveling</span> est un site dédié aux passionnés de gaming et de manga. 
                         Notre objectif est de rassembler en un seul endroit toutes les informations du moment, qu’il s’agisse de l’actualité 
                         des jeux vidéo, des nouveautés figurines, des sorties d’anime ou encore des tendances mangas.
@@ -55,6 +63,7 @@ export default function Apropos() {
 
             <NavLink
                 to="/register"
+                onClick={scrollToTop}
                 className="button-blue py-2 px-2 m-2"
             >
                 S'inscrire !
@@ -63,6 +72,7 @@ export default function Apropos() {
             <div className="flex-row flex justify-around items-center gap-5">
                 <NavLink
                     to="/home"
+                    onClick={scrollToTop}
                     className="border-2 rounded-2xl p-2 border-gray-400 hover:bg-white hover:text-black hover:transition duration-300"
                 >
                     Découvrir
@@ -70,6 +80,7 @@ export default function Apropos() {
 
                 <NavLink 
                     to="/contact"
+                    onClick={scrollToTop}
                     className="border-2 rounded-2xl p-2 border-gray-400 hover:bg-white hover:text-black hover:transition duration-300"
                 >
                     Nous contacter

@@ -10,6 +10,7 @@ import bannierejarlspunk from "../assets/banniere-jarlspunk.webp";
 export default function StreamerTwitch({ userConnected }) {
     console.log(userConnected);
 
+
     return(
         <section className="text-white text-center bg-black">
             <h2 className="text-3xl font-bold p-3">Nos streamers Partenaires Twitch !</h2>
@@ -35,34 +36,39 @@ export default function StreamerTwitch({ userConnected }) {
                                 
                                 <a href="https://www.instagram.com/alta_bichon/"
                                     className="hover:text-purple-400"
+                                    target="blank"
                                     alt="lien insta altabichon" 
                                     title=""><FaInstagram size={48} />
                                 </a>
                                     
                                 
                                 <a href="https://www.tiktok.com/@alta.bichon"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien tiktok altabichon" 
                                     title="lien chaine tiktok"><FaTiktok size={48} />
                                 </a>
                                     
                                 
                                 <a href="https://www.twitch.tv/papybichon"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien twitch altabichon" 
                                     title="lien chaine twitch altabichon">PapyBichon<FaTwitch size={48} />
                                 </a>
                                     
                                 
                                 <a href="https://www.twitch.tv/altaviran"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien twitch altabichon" 
                                     title="lien chaine twitch altabichon">Altaviran<FaTwitch size={48} />
                                 </a>
                             
                                 
                                 <a href="https://discord.com/invite/sKhy5MAqSF"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien discord altabichon" 
                                     title="lien chaine discord"><FaDiscord size={48} />
                                 </a>
@@ -99,28 +105,32 @@ export default function StreamerTwitch({ userConnected }) {
 
                                 {/**lien INSTA */}
                                 <a href="https://www.instagram.com/jarl.spunk/"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien insta jarlspunk" 
                                     title="lien chaine instagram"><FaInstagram size={48} />
                                 </a>
 
                                 {/**lien TIKTOK */}
                                 <a href="https://www.tiktok.com/@jarlspunk"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien tiktok jarlspunk" 
                                     title="lien chaine tiktok"><FaTiktok size={48} />
                                 </a>
                                     
                                 {/**lien TWITCH */}
                                 <a href="https://www.twitch.tv/jarlspunk?lang=fr"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien twitch jarlspunk" 
                                     title="lien chaine twitch jarlspunk"><FaTwitch size={48} />
                                 </a>
                                     
                                 {/**lien DISCORD */}
                                 <a href="https://discord.com/invite/q5xm48BKvJ"
-                                    className="hover:text-purple-400" 
+                                    className="hover:text-purple-400"
+                                    target="blank" 
                                     alt="lien discord jarlspunk" 
                                     title="lien chaine discord"><FaDiscord size={48} />
                                 </a>

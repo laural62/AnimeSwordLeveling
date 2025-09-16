@@ -57,29 +57,35 @@ export default function Header() {
                 <>        
                     <NavLink 
                         to={"/"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         Home
                     </NavLink>
                         
                     <NavLink 
                         to={"/actu"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         Actualités
                     </NavLink>
 
                     <NavLink 
                         to={"/streamer"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         Streamer
                     </NavLink>
 
                     <NavLink 
                         to={"/apropos"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         A propos
                     </NavLink>
 
-                    <li className="list-none font-bold">
+                    <NavLink 
+                        to={"/convention"} 
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
+                        Conventions
+                    </NavLink>
+
+                    <li className="list-none font-bold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition">
                         <details> {/**details met une fleche pour la liste déroulante */}
                             <summary>Mon Compte</summary> {/**summary sert a ouvrir et fermer le block, soit un titre cliquable */}
                             <ul className="p-2 bg-base-100 rounded-t-none">
@@ -94,10 +100,11 @@ export default function Header() {
                                 <li><NavLink to="/contact" className="hover:bg-gray-700 hover:underline">Contact</NavLink></li>
                             </ul>
                         </details>
-                    </li> 
+                    </li>
+                     
                     <NavLink 
                         to="/" 
-                        className="text-white font-semibold hover:underline" 
+                        className="text-white font-semibold hover:text-red-700 px-1 py-1 hover:text-2xl hover:transition hover:duration-300" 
                         onClick={logout}
                         >
                         Déconnexion
@@ -108,19 +115,19 @@ export default function Header() {
                 <nav className="flex space-x-6 sm:flex-row flex-col">
                     <NavLink 
                         to={"/"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         Home
                     </NavLink>
                     
                     <NavLink 
                         to={"/apropos"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         A Propos
                     </NavLink>
 
                     <NavLink 
                         to={"/contact"} 
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         Contact
                     </NavLink>
 

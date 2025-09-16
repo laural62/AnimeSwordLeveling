@@ -14,19 +14,22 @@ export default function Reseaux() {
 
         <div className="flex items-center justify-center flex-row">
             <a href="https://discord.gg/QMMUhrm8Mg" 
-                title="lien discord" 
+                title="lien discord"
+                target="blank" 
                 alt="lien web vers le discord"
             ><IoLogoDiscord fontSize={45}/>
             </a>
 
             <a href="https://instagram.com"
                 title="lien instagram"
+                target="blank"
                 alt="lien reseau instagram"
             ><FaInstagramSquare fontSize={45} />
             </a>
 
             <a href="https://tiktok.com"
                 title="lien tiktok"
+                target="blank"
                 atl="lien vers reseaux tiktok"
             ><AiFillTikTok fontSize={45} />
             </a>

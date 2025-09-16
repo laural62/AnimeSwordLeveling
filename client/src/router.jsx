@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import FormulaireContact from "./pages/FormulaireContact";
 import Home from "./components/Home";
-import Nouveau from "./components/Nouveau";
 import Actu from "./components/Actu";
 import StreamerTwitch from "./components/StreamerTwitch";
 import Apropos from "./components/Apropos";
@@ -65,14 +64,6 @@ export const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
-      },
-      {
-        path: "/nouveau",
-        element: (
-          <UserConnected>
-            <Nouveau />
-          </UserConnected>
-        ),
       },
       {
         path: "/actu",

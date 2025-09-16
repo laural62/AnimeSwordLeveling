@@ -15,7 +15,7 @@ export default function Footer({userConnected, toggleUser}) {
             <div>
                 <ul className="list-style-none hidden sm:block">
                     <NavLink to={"/"} onClick={scrollToTop} className="hover:text-2xl"><li>Accueil</li></NavLink>
-                    <NavLink to={"/nouveau"} onClick={scrollToTop} className="hover:text-2xl"><li>Nouveautes</li></NavLink>
+                    <NavLink to={"/convention"} onClick={scrollToTop} className="hover:text-2xl"><li>Conventions</li></NavLink>
                     <NavLink to={"/actu"} onClick={scrollToTop} className="hover:text-2xl"><li>Actualites</li></NavLink>
                     <NavLink to={"/streamer"} onClick={scrollToTop} className="hover:text-2xl"><li>Streamer</li></NavLink>
                 </ul>
@@ -36,8 +36,8 @@ export default function Footer({userConnected, toggleUser}) {
             <div>
                 <ul className="list-style-none text-center hidden sm:block">
                     <NavLink to={"/apropos"} onClick={scrollToTop} className="hover:text-2xl"><li>Notre Histoire</li></NavLink>
-                    <a href="CGU.pdf" className="hover:text-2xl"><li>CGU</li></a>
-                    <a href="Vos mentions légales.pdf" className="hover:text-2xl"><li>Mentions légales</li></a>
+                    <a href="CGU.pdf" target="blank" className="hover:text-2xl"><li>CGU</li></a>
+                    <a href="Vos mentions légales.pdf" target="blank" className="hover:text-2xl"><li>Mentions légales</li></a>
                     <NavLink to={"/contact"} onClick={scrollToTop} className="hover:text-2xl"><li>Nous Contacter</li></NavLink>
                 </ul> 
             </div>

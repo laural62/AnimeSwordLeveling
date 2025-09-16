@@ -1,4 +1,6 @@
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
+
+//import d'image en contenu dans homepage
 import popyuki from "../assets/pop_yuki.webp";
 import persokazu from "../assets/perso-kazu-t.webp";
 import gaming from "../assets/gaming.webp";
@@ -18,7 +20,7 @@ import fullmetalalchemist from "../assets/fullmetal-alchemist.webp";
 import logoJarl from "../assets/logoJarl.webp";
 
 export default function Home() {
-    
+
     return ( 
       <>
       {/*section de Bienvenue "Accueil" */}

@@ -4,46 +4,57 @@ import jbc from "../assets/japan-breizh-con2025.webp";
 
 export default function Convention() {
 //listing des conventions organisé en France (recherche et source via google).
+
+//lister jusque 4 conventions max
   return (
     <section className="h-screen bg-black text-white flex items-center justify-center flex-col">
-      <div>
-        <h2>Les Conventions !</h2>
-        <h3> Découvre les conventions à venir pour cette année 2025 !</h3>
+      <div className="flex items-center justify-center gap-3 flex-col">
+        <h2 className="text-2xl font-semibold">Les Conventions !</h2>
+        <h3 className="text-center"> Découvre les conventions à venir pour cette année 2025 !</h3>
         
-        <div class="card mb-3">
-          <img src={parismanga} class="card-img-top" alt="affiche paris manga 2025" title="affiche paris manga 2025"/>
-          <div class="card-body">
-            <h5 class="card-title">Paris Manga 2025 ! By TGS</h5>
-            <p class="card-text">Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, le salon de la pop culture et de la culture geek, jeux vidéo, manga, comics, bd, science fiction, cinéma et série tv, culture japonaise.</p>
+        <div class="flex items-center justify-center sm:flex-row flex-col p-2">
+          <img src={parismanga} class="sm:w-[450px] w-[250px]" alt="affiche paris manga 2025" title="affiche paris manga 2025"/>
+          <div class="flex items-center justify-center flex-col">
+            <h3 class="text-center font-bold sm:text-2xl">Paris Manga 2025 ! By TGS</h3>
+            <p className="block sm:hidden text-center w-[300px]">Le 8 & 9 Novembre 2025, Saint-Brieuc | Parc des Expositions</p>
+            <p class="text-center sm:w-[400px] hidden sm:block">Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, le salon de la pop culture et de la culture geek, jeux vidéo, manga, comics, bd, science fiction, cinéma et série tv, culture japonaise.</p>
             <a href="https://www.parismanga.fr/" 
-              title="lien vers paris manga" 
+              title="lien vers paris manga"
+              target="blank"
+              className="text-center border-2 border-b-gray-500 p-1 rounded hover:bg-blue-400 hover:transition hover:duration-300" 
               alt="lien vers site paris manga"
             >En savoir +</a>
           </div>
         </div>
 
-        <div class="card mb-3">
-          <img src={pgw} class="card-img-top" alt="affiche paris games week 2025" title="affiche paris games week 2025"/>
-          <div class="card-body">
-            <h5 class="card-title">Paris Games Week !</h5>
-            <p class="card-text">Du 30 Octobre au 2 Novembre 2025, PARIS EXPO / PORTE DE VERSAiLLES, 
+        <div class="flex items-center justify-center sm:flex-row flex-col p-2">
+          <img src={pgw} class="sm:w-[400px] w-[200px]" alt="affiche paris games week 2025" title="affiche paris games week 2025"/>
+          <div class="flex items-center justify-center flex-col">
+            <h3 class="text-center font-bold sm:text-2xl">Paris Games Week !</h3>
+            <p className="block sm:hidden text-center w-[300px]">Le 8 & 9 Novembre 2025, Saint-Brieuc | Parc des Expositions</p>
+            <p class="text-center sm:w-[400px] hidden sm:block">Du 30 Octobre au 2 Novembre 2025, PARIS EXPO / PORTE DE VERSAiLLES, 
               Une expérience incontournable pour les fans de jeux vidéo, mais aussi pour tous les curieux, 
               familles et passionnés de culture geek..</p>
             <a href="https://www.parisgamesweek.com/fr" 
-              title="lien vers paris games week" 
+              title="lien vers paris games week"
+              target="blank" 
+              className="text-center border-2 border-b-gray-500 p-1 rounded hover:bg-blue-400 hover:transition hover:duration-300"
               alt="lien vers site paris games week"
             >En savoir +</a>
           </div>
         </div>
 
-        <div class="card mb-3">
-          <img src={jbc} class="card-img-top" alt="affiche japan breiz con'2025" title="affiche japan breizh con' 2025"/>
-          <div class="card-body">
-            <h5 class="card-title">Japan Breizh con' 2025 !</h5>
-            <p class="card-text">Le 8 & 9 Novembre 2025, Saint-Brieuc | Parc des Expositions, 
+        <div class="flex items-center justify-center sm:flex-row flex-col p-2">
+          <img src={jbc} class="sm:w-[450px] w-[200px]" alt="affiche japan breiz con'2025" title="affiche japan breizh con' 2025"/>
+          <div class="flex items-center justify-center flex-col">
+            <h3 class="text-center font-bold sm:text-2xl">Japan Breizh con' 2025 !</h3>
+            <p className="block sm:hidden text-center w-[300px]">Le 8 & 9 Novembre 2025, Saint-Brieuc | Parc des Expositions</p>
+            <p class="text-center sm:w-[400px] hidden sm:block">Le 8 & 9 Novembre 2025, Saint-Brieuc | Parc des Expositions, 
               Manga, Pop Culture, Cosplay, Kpop, Jeux-vidéo.</p>
             <a href="https://breizhcon.bzh/saintbrieuc/" 
-              title="lien vers japan breizh con" 
+              title="lien vers japan breizh con"
+              target="blank"
+              className="text-center border-2 border-b-gray-500 p-1 rounded hover:bg-blue-400 hover:transition hover:duration-300" 
               alt="lien vers site japan breizh con"
             >En savoir +</a>
           </div>

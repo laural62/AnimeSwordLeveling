@@ -4,19 +4,23 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Toaster } from "react-hot-toast";
 import { AuthProvider } from "./context/AuthContext";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 function App() {
 
+  const clientId = import.meta.env.VITE_GOOGLE_AUTH;
+
   return (
     <div className="h-screen">
-      <AuthProvider> 
-        <Header />
+      <GoogleOAuthProvider clientId={clientId}>
+        <AuthProvider> 
+          <Header />
 
-        <Outlet /> 
+          <Outlet /> 
 
-        <Footer />  
-      </AuthProvider>
-      
+          <Footer />  
+        </AuthProvider>
+      </GoogleOAuthProvider>
       <Toaster />
 
     </div>

@@ -13,7 +13,7 @@ export default function Apropos() {
 
     return(
         <section className="bg-black text-white flex-col sm:h-screen h-[80vh] flex justify-center items-center px-2 sm:gap-3">
-            <h2 className="sm:text-3xl text-2xl">A propos de Nous !</h2>
+            <h2 className="sm:text-3xl text-2xl bg-ducky p-2">A propos de Nous !</h2>
             
             <div className="flex sm:flex-row flex-col items-center px-3">
                 <img src={yukilaura} alt="image personnage feminin" title="personnage feminin manga" 
@@ -61,19 +61,11 @@ export default function Apropos() {
                 </div>
             </div>
 
-            <NavLink
-                to="/register"
-                onClick={scrollToTop}
-                className="button-blue py-2 px-2 m-2"
-            >
-                S'inscrire !
-            </NavLink>
-
             <div className="flex-row flex justify-around items-center gap-5">
                 <NavLink
                     to="/home"
                     onClick={scrollToTop}
-                    className="border-2 rounded-2xl p-2 border-gray-400 hover:bg-white hover:text-black hover:transition duration-300"
+                    className="border-2 rounded-2xl p-2 bg-ducky border-gray-400 hover:bg-white hover:text-black hover:text-2xl hover:transition duration-300"
                 >
                     Découvrir
                 </NavLink>
@@ -81,7 +73,7 @@ export default function Apropos() {
                 <NavLink 
                     to="/contact"
                     onClick={scrollToTop}
-                    className="border-2 rounded-2xl p-2 border-gray-400 hover:bg-white hover:text-black hover:transition duration-300"
+                    className="border-2 rounded-2xl p-2 bg-ducky border-gray-400 hover:bg-white hover:text-black hover:text-2xl hover:transition duration-300"
                 >
                     Nous contacter
                 </NavLink>

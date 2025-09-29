@@ -9,7 +9,7 @@ export default function Convention() {
   return (
     <section className="h-screen bg-black text-white flex items-center justify-center flex-col">
       <div className="flex items-center justify-center gap-3 flex-col">
-        <h2 className="text-2xl font-semibold">Les Conventions !</h2>
+        <h2 className="text-2xl font-semibold bg-ducky p-2">Les Conventions !</h2>
         <h3 className="text-center"> Découvre les conventions à venir pour cette année 2025 !</h3>
         
         <div class="flex items-center justify-center sm:flex-row flex-col p-2">

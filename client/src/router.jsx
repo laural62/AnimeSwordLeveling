@@ -19,6 +19,16 @@ import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
 import MonAbonnement from "./components/moncompte/MonAbonnement";
 import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
+import LegendeSub from "./components/moncompte/LegendeSub";
+import OriginSub from "./components/moncompte/OriginSub";
+import CheckoutButton from "./components/stripe/CheckoutButton";
+import SuccessPage from "./components/stripe/SuccessPage";
+
+// Définition des pages directement dans le fichier
+
+function CancelPage() {
+  return <h1>Paiement annulé ❌</h1>;
+}
 
 export const router = createBrowserRouter([
   {
@@ -111,6 +121,46 @@ export const router = createBrowserRouter([
         element: (
           <UserConnected>
             <MonAbonnement />
+          </UserConnected>
+        ),
+      },
+      {
+        path: "/originsub",
+        element: (
+          <UserConnected>
+            <OriginSub />
+          </UserConnected>
+        ),
+      },
+      {
+        path: "/legendesub",
+        element: (
+          <UserConnected>
+            <LegendeSub />
+          </UserConnected>
+        ),
+      },
+      {
+        path: "/checkout",
+        element: (
+          <UserConnected>
+            <CheckoutButton />
+          </UserConnected>
+        ),
+      },
+      {
+        path: "/success",
+        element: 
+          
+            <SuccessPage />
+          
+        
+      },
+      {
+        path: "/cancel",
+        element: (
+          <UserConnected>
+            <CancelPage />
           </UserConnected>
         ),
       },

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import avatar from "../../assets/avatar_femme.webp";
 
 export default function CompteUser() {

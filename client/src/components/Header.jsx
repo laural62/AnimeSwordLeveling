@@ -134,13 +134,13 @@ export default function Header() {
                     <NavLink
                         to={"/Login"}
                         
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         Connexion
                     </NavLink>
 
                     <NavLink
                         to={"/Register"}
-                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-2xl hover:transition hover:duration-200">
+                        className="text-white font-semibold hover:text-blue-400 px-1 py-1 hover:text-1xl hover:transition hover:duration-200">
                         Inscription
                     </NavLink>
                 </nav>

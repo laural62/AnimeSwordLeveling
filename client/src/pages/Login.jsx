@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
 import { signIn } from "../api/auth.api";
 
+
 export default function Login() {
     const navigate = useNavigate();
 
@@ -116,6 +117,7 @@ export default function Login() {
                 </div>
 
             </form>
+            
         </div>
     );
 }

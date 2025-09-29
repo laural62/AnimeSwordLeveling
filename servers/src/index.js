@@ -65,7 +65,7 @@ app.post("/create-checkout-session", async (req, res) => {
   }
 });
 
-// Route webhook pour gérer les abonnements
+// Route webhook pour gérer les abonnements avec stripe
 app.post("/webhook", express.raw({ type: "application/json" }), (req, res) => {
   // ce handler doit être configuré AVEC la signature Stripe
   const sig = req.headers["stripe-signature"];

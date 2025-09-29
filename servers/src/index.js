@@ -44,7 +44,7 @@ app.listen(PORT, () => {
 });
 
 //abonnement avec stripe
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); // clé secrète
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 // Route pour créer une session Checkout
 app.post("/create-checkout-session", async (req, res) => {
@@ -55,7 +55,7 @@ app.post("/create-checkout-session", async (req, res) => {
       mode: "subscription",
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
-      success_url: "http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}",
+      success_url: "http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}",
       cancel_url: "http://localhost:3000/cancel",
     });
 

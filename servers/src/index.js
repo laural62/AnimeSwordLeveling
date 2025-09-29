@@ -44,7 +44,7 @@ app.listen(PORT, () => {
 });
 
 //abonnement avec stripe
-const stripe = new Stripe("sk_test_51S90z2JTQpSZHZb9TwHMtpjd9m8PqfQBs9WMMAANjq9MrimonIh1QPl4sfetVdVvZOijqZlTFpBJSSrxLh8jfUIx00dhSGlSRW"); // clé secrète
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY); // clé secrète
 
 // Route pour créer une session Checkout
 app.post("/create-checkout-session", async (req, res) => {

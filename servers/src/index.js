@@ -56,8 +56,8 @@ app.post("/create-checkout-session", async (req, res) => {
       mode: "subscription",
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
-      success_url: "https://anime-sword-leveling.vercel.app/success?session_id={CHECKOUT_SESSION_ID}", //mettre le nom de domain pour deployed
-      cancel_url: "https://anime-sword-leveling.vercel.app/cancel",
+      success_url: "https://animeswordleveling.netlify.app/success?session_id={CHECKOUT_SESSION_ID}", //mettre le nom de domain pour deployed
+      cancel_url: "https://animeswordleveling.netlify.app/cancel",
     });
 
     res.json({ url: session.url });
@@ -70,7 +70,7 @@ app.post("/create-checkout-session", async (req, res) => {
 app.post("/webhook", express.raw({ type: "application/json" }), (req, res) => {
   // ce handler doit être configuré AVEC la signature Stripe
   const sig = req.headers["stripe-signature"];
-  const endpointSecret = "SIGNATURE_WEBHOOK"; // à récupérer sur Stripe
+  const endpointSecret = "SIGNATURE_WEBHOOK"; // à récupérer sur Stripe.
 
   let event;
   try {

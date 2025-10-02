@@ -15,9 +15,9 @@ export default function Apropos() {
         <section className="bg-black text-white flex-col sm:h-screen h-[80vh] flex justify-center items-center px-2 sm:gap-3">
             <h2 className="sm:text-3xl text-2xl bg-ducky p-2">A propos de Nous !</h2>
             
-            <div className="flex sm:flex-row flex-col items-center px-3">
+            <div className="flex sm:flex-row flex-col items-center px-3 gap-2">
                 <img src={yukilaura} alt="image personnage feminin" title="personnage feminin manga" 
-                className="sm:w-[250px] object-cover w-[100px]"/>
+                className="sm:w-[350px] object-cover w-[100px]"/>
             
 
                 {/**création d"un paragraphe descriptif version tablette et pc*/}

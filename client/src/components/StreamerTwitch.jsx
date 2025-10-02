@@ -12,9 +12,9 @@ export default function StreamerTwitch({ userConnected }) {
 
 
     return(
-        <section className="text-white text-center bg-black">
-            <h2 className="text-3xl font-bold p-3">Nos streamers Partenaires Twitch !</h2>
-            <h3>Laissez nous vous faire des découvrir des treamers aux coeur d'or, où leur live est bienveillant, chill, rire et blabla...</h3>
+        <section className="text-white bg-black flex items-center flex-col">
+            <h2 className="text-3xl font-bold p-3 bg-ducky sm:w-[700px]">Nos streamers Partenaires Twitch !</h2>
+            <h3 className="text-2xl italic">Laissez nous vous faire des découvrir des treamers aux coeur d'or, où leur live est bienveillant, chill, rire et blabla...</h3>
 
             {/**{userConnected ? (*/}
                 <div className="flex justify-around flex-col h-screen">

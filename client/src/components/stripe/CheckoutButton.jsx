@@ -16,7 +16,7 @@ function CheckoutButton({ priceId }) {
     }
   };
 
-  return <button onClick={handleClick}>S'abonner</button>;
+  return <button onClick={handleClick} target="blank">S'abonner</button>;
 }
 
 export default CheckoutButton;

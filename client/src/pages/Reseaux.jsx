@@ -13,7 +13,8 @@ export default function Reseaux() {
         </div>
 
         <div className="flex items-center justify-center flex-row">
-            <a href="https://discord.gg/QMMUhrm8Mg" 
+            <a href="https://discord.gg/QMMUhrm8Mg"
+                className="hover:text-purple-600" 
                 title="lien discord"
                 target="blank" 
                 alt="lien web vers le discord"
@@ -21,6 +22,7 @@ export default function Reseaux() {
             </a>
 
             <a href="https://instagram.com"
+                className="hover:text-purple-600"
                 title="lien instagram"
                 target="blank"
                 alt="lien reseau instagram"
@@ -28,6 +30,7 @@ export default function Reseaux() {
             </a>
 
             <a href="https://tiktok.com"
+                className="hover:text-purple-600"
                 title="lien tiktok"
                 target="blank"
                 atl="lien vers reseaux tiktok"

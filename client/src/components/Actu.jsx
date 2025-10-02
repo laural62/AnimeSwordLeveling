@@ -7,12 +7,12 @@ export default function Actu() {
     return(
         <section className="sm:h-screen h-[95vh] bg-black text-white flex items-center justify-center flex-col">
             <div className="sm:h-[85vh] flex items-center justify-center flex-col gap-4">
-                <h2 className="sm:text-2xl sm:font-bold underline">Actualités du moment !</h2>
+                <h2 className="sm:text-2xl sm:font-bold underline bg-ducky p-2">Actualités du moment !</h2>
                 <h3 className="text-center w-[400px] sm:block hidden">Découvrez les actualités du moment et à venir que ce soit manga, jeux vidéo, 
                     animé, et convention-salon pop culture !</h3>
 
                 <div class="flex items-center justify-center sm:flex-row flex-col gap-3">
-                    <div className="text-center gap-3">
+                    <div className="text-center gap-3 p-2">
                         <img src={parismanga} class="sm:h-[200px] w-[auto] h-[100px]" alt="affiche paris manga 2025" title="affiche paris manga 2025"/>
                         <div class="text-center sm:block hidden">
                             <h3 class="sm:font-semibold text-center">Paris Manga 2025 ! By TGS</h3>
@@ -36,7 +36,7 @@ export default function Actu() {
                 </div>
     
                 {/**actualites figurine + animé-manga */}
-                <div className="flex items-center justify-center sm:flex-row flex-col gap-3">
+                <div className="flex items-center justify-center sm:flex-row flex-col gap-3 m-2">
                     
                     <div className="text-center flex gap-3 flex-row">
                         <img src={btspop} className="object-cover sm:h-[200px] h-[120px]" />

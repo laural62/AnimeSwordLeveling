@@ -78,7 +78,7 @@ export default function FormulaireContact() {
                 </div>
             {/**div checkbox + rgpd*/}
                 <div className="flex flex-col mb-2">
-                    <label htmlFor="rgpd" className="mb-2 w-[350px] italic text-[16px]">
+                    <label htmlFor="rgpd" className="mb-2 w-[350px] sm:w-[700px] italic text-[16px]">
                         <input
                         
                         type="checkbox"

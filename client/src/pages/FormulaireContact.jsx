@@ -78,7 +78,7 @@ export default function FormulaireContact() {
                 </div>
             {/**div checkbox + rgpd*/}
                 <div className="flex flex-col mb-2">
-                    <label htmlFor="rgpd" className="mb-2">
+                    <label htmlFor="rgpd" className="mb-2 w-[350px] italic text-[16px]">
                         <input
                         
                         type="checkbox"
@@ -96,7 +96,7 @@ export default function FormulaireContact() {
                 </button>
 
                 <div className="text-center">
-                    <NavLink to={"/Home"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200 ">Retour</NavLink>
+                    <NavLink to={"/Home"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200 hidden sm:block ">Retour</NavLink>
                 </div>
 
             </form>

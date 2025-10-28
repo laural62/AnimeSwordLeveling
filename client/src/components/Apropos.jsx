@@ -13,15 +13,15 @@ export default function Apropos() {
 
     return(
         <section className="bg-black text-white flex-col sm:h-screen h-[80vh] flex justify-center items-center px-2 sm:gap-3">
-            <h2 className="sm:text-3xl text-2xl bg-ducky p-2">A propos de Nous !</h2>
+            <h2 className="sm:text-3xl text-1xl bg-ducky p-2">A propos de Nous !</h2>
             
             <div className="flex sm:flex-row flex-col items-center px-3 gap-2">
                 <img src={yukilaura} alt="image personnage feminin" title="personnage feminin manga" 
-                className="sm:w-[350px] object-cover w-[100px]"/>
+                className="sm:w-[350px] object-cover w-[100px] rounded-4xl p-1"/>
             
 
                 {/**création d"un paragraphe descriptif version tablette et pc*/}
-                <div className="sm:text-wrap sm:w-[700px]">
+                <div className="sm:text-wrap sm:w-[700px] w-[350px]">
                     <h3 className="sm:text-2xl underline">Voici notre histoire et qui nous sommes !</h3>    
                     <p className="hidden sm:block p-2 m-2">
                         Créé en novembre 2025 par Laura Laisné, <span className="font-bold">Anime Sword Leveling</span> est un site dédié aux passionnés de gaming et de manga. 
@@ -61,11 +61,11 @@ export default function Apropos() {
                 </div>
             </div>
 
-            <div className="flex-row flex justify-around items-center gap-5">
+            <div className="flex-row flex justify-around items-center sm:gap-5">
                 <NavLink
                     to="/home"
                     onClick={scrollToTop}
-                    className="border-2 rounded-2xl p-2 bg-ducky border-gray-400 hover:bg-white hover:text-black hover:text-2xl hover:transition duration-300"
+                    className="border-2 rounded-2xl p-2 bg-ducky hidden sm:block border-gray-400 hover:bg-white hover:text-black hover:text-2xl hover:transition duration-300"
                 >
                     Découvrir
                 </NavLink>
@@ -73,7 +73,7 @@ export default function Apropos() {
                 <NavLink 
                     to="/contact"
                     onClick={scrollToTop}
-                    className="border-2 rounded-2xl p-2 bg-ducky border-gray-400 hover:bg-white hover:text-black hover:text-2xl hover:transition duration-300"
+                    className="border-2 rounded-2xl p-2 bg-ducky hidden sm:block border-gray-400 hover:bg-white hover:text-black hover:text-2xl hover:transition duration-300"
                 >
                     Nous contacter
                 </NavLink>

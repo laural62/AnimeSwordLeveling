@@ -206,7 +206,7 @@ export default function Register() {
                 </div>
 
                     {/**checkbox + rgpd*/}
-                <div className="flex flex-col mb-2 sm:w-[500px]">
+                <div className="flex flex-col mb-2 sm:w-[500px] w-[300px]">
                     <label htmlFor="rgpd" className="mb-2">
                         <input
                         {...register("rgpd")}
@@ -224,7 +224,7 @@ export default function Register() {
                 </button>
 
                 <div className="text-center">
-                    <NavLink to={"/login"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200 ">Déjà inscrit ? </NavLink>
+                    <NavLink to={"/login"} className="button-blue hidden sm:block px-3 py-2 hover:text-2xl hover:transition hover:duration-200 ">Déjà inscrit ? </NavLink>
                 </div>
 
             </form>

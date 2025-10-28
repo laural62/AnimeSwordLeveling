@@ -4,7 +4,7 @@ import { AiFillTikTok } from "react-icons/ai";
 
 export default function Reseaux() {
   return (
-    <section className="h-screen bg-black text-white flex items-center justify-center flex-col gap-4">
+    <section className="h-screen bg-black text-white flex items-center justify-center flex-col sm:gap-4">
         <h1 className="text-2xl font-semibold sm:block hidden"> Nous suivre !</h1>
 
         <div>

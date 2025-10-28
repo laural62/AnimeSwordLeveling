@@ -44,16 +44,16 @@ export default function Home() {
             <div className="flex gap-3 m-3">
                   {/**section figurine pop */}
               <div> 
-                <img src={popyuki} alt="image figurine pop feminin" title="section figurine" className="w-50 h-auto"/>
-                <h3 className="text-2xl text-center">Figurine et Pop !</h3>
+                <img src={popyuki} alt="image figurine pop feminin" title="section figurine" className="sm:w-50 w-[150px] h-auto"/>
+                <h3 className="sm:text-2xl text-center">Figurine et Pop !</h3>
                   <div className="m-4">
                     <NavLink to={"/figurine"} className="button-blue px-1 py-1 hover:text-2xl">Découvrir</NavLink>
                   </div>
               </div>
                   {/**section anime manga */}
               <div>
-                <img src={persokazu} alt="image personnage anime manga" title="section anime et manga" className="w-50 h-auto"/>
-                <h3 className="text-2xl text-center">Animé et Manga !</h3>
+                <img src={persokazu} alt="image personnage anime manga" title="section anime et manga" className="sm:w-50 h-auto w-[150px]"/>
+                <h3 className="sm:text-2xl text-center">Animé et Manga !</h3>
                   <div className="m-4">
                     <NavLink to={"/manga"} className="button-blue px-1 py-1 hover:text-2xl">Découvrir</NavLink>
                   </div>
@@ -64,8 +64,8 @@ export default function Home() {
             <div className="flex gap-5 m-3 space-x-3">
                     {/**section jeux video */}
               <div>
-                <img src={gaming} alt="image jeux video epee" title="section jeux video" className="w-50 h-auto"/>
-                <h3 className="text-2xl text-center">Jeux vidéo !</h3>
+                <img src={gaming} alt="image jeux video epee" title="section jeux video" className="sm:w-50 w-[150px] h-auto"/>
+                <h3 className="sm:text-2xl text-center">Jeux vidéo !</h3>
                   <div className="m-4">
                     <NavLink to={"/jeuxvideo"} className="button-blue px-1 py-1 hover:text-2xl">Découvrir</NavLink>
                   </div>
@@ -73,8 +73,8 @@ export default function Home() {
                     {/**section stream */}
               <div className="flex items-center justify-center flex-col">
                 <img src={streamer} alt="image streamer" title="section streamers" 
-                className="sm:w-50 w-40 sm:h-auto h-50"/>
-                <h3 className="text-2xl text-center">Nos Streamers Partenaires !</h3>
+                className="sm:w-50 sm:h-auto w-[130px]"/>
+                <h3 className="sm:text-2xl text-center">Nos Streamers Partenaires !</h3>
                   <div className="m-4">
                     <NavLink to={"/streamer"} className="button-blue px-1 py-1 hover:text-2xl">Découvrir</NavLink>
                   </div>
@@ -85,24 +85,24 @@ export default function Home() {
         </section>
 
       {/**Section Nouveautés mixtes, actualiser tous les quinze jours, "Nouveau" */}
-        <section className="h-screen bg-black text-white flex justify-center flex-col items-center ">
+        <section className="h-screen bg-black text-white flex justify-center flex-col items-center">
           <div>
-            <div className="flex items-center justify-center m-3">
-              <h2 className="sm:text-3xl text-2xl border-2 py-2 px-4 border-gray-300 w-fit self-center">Actualités !</h2>
+            <div className="flex items-center justify-center">
+              <h2 className="sm:text-3xl text-2xl border-2 border-gray-300 w-fit self-center p-1">Actualités !</h2>
             </div>
 
-              <div className="m-2 gap-3">
+              <div className="p-3">
                 <div className="flex justify-center items-center flex-col">
-                  <img src={sololeveling} className="rounded sm:h-75 h-[150px] object-cover" />
-                  <p className="text-center sm:w-[900px] h-[100px]">Solo Leveling | ARISE OVERDRIVEANNONCE<br/>
+                  <img src={sololeveling} className="rounded sm:w-[600px] w-[200px] object-cover" />
+                  <p className="text-center sm:w-[900px] w-[350px]">Solo Leveling | ARISE OVERDRIVEANNONCE<br/>
                   Prochainement Solo Leveling fera son appartion comme jeux vidéo uniquement sur steam. Restez Connecté pour en savoir plus.</p>
                 </div>
               </div>
 
-              <div className="m-1 gap-3 py-2">
+              <div className="p-3">
                 <div className="flex justify-center items-center flex-col">
-                  <img src={parismanga} className="rounded w-[500px] h-[150px] object-cover" />
-                  <p className="text-center sm:w-[600px]">Paris Manga 2025 ! By TGS<br/>
+                  <img src={parismanga} className="rounded sm:w-[600px] w-[200px] object-cover" />
+                  <p className="text-center sm:w-[600px] w-[300px]">Paris Manga 2025 ! By TGS<br/>
                   Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, 
                       le salon de la pop culture et de la culture geek...</p>
                 </div>

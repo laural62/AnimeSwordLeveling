@@ -93,7 +93,7 @@ export default function Home() {
 
               <div className="p-3">
                 <div className="flex justify-center items-center flex-col">
-                  <img src={sololeveling} className="rounded sm:w-[600px] w-[200px] object-cover" />
+                  <img src={sololeveling} className="rounded sm:w-[600px] w-[200px] object-cover" alt="image solo leveing jeu"/>
                   <p className="text-center sm:w-[900px] w-[350px]">Solo Leveling | ARISE OVERDRIVEANNONCE<br/>
                   Prochainement Solo Leveling fera son appartion comme jeux vidéo uniquement sur steam. Restez Connecté pour en savoir plus.</p>
                 </div>
@@ -101,7 +101,7 @@ export default function Home() {
 
               <div className="p-3">
                 <div className="flex justify-center items-center flex-col">
-                  <img src={parismanga} className="rounded sm:w-[600px] w-[200px] object-cover" />
+                  <img src={parismanga} className="rounded sm:w-[600px] w-[200px] object-cover" alt="convention paris manga"/>
                   <p className="text-center sm:w-[600px] w-[300px]">Paris Manga 2025 ! By TGS<br/>
                   Le 4 & 5 Octobre 2025, au parc des Expositions à Villepinte, 
                       le salon de la pop culture et de la culture geek...</p>
@@ -129,7 +129,7 @@ export default function Home() {
                   <p className="sm:hidden block">Découvrez notre duo de streamer sur des jeux chill, rire et bétise !</p>
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
-                    <img src={altabichon} className="w-50 text-center"/>
+                    <img src={altabichon} className="w-50 text-center" alt="logo streamer alta bichon"/>
                     <div className="text-center">
                       <NavLink to={"/streamer"} className="button-blue px-1 py-1 hover:text-2xl hover:transition hover:duration-200">En savoir +</NavLink>
                     </div>
@@ -192,7 +192,9 @@ export default function Home() {
                 {/**div contenant img + nav vers la page streamer */}
                   <div className="flex items-center gap-3 flex-col"> 
                     <img src={logoJarl} 
-                      className="w-50 text-center"/>
+                      className="w-50 text-center"
+                      alt="logo streamer jarl"
+                    />
                     <div className="text-center">
                       <NavLink to={"/streamer"} 
                         className="button-blue px-1 py-1 hover:text-2xl hover:transition hover:duration-200">En savoir +</NavLink>

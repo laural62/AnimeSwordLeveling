@@ -27,7 +27,7 @@ export default function Actu() {
                     </div>
 
                     <div className="flex items-center justify-center flex-col gap-3">
-                    <img src={sololeveling} className="sm:h-[200px] w-[auto] h-[100px] object-cover" />
+                    <img src={sololeveling} className="sm:h-[200px] w-[auto] h-[100px] object-cover" alt="image solo leveling" />
                     <p className="text-center sm:w-[500px] sm:block hidden">Solo Leveling | ARISE OVERDRIVEANNONCE<br/>
                         Prochainement Solo Leveling fera son appartion comme jeux vidéo sur steam !
                     </p>
@@ -39,14 +39,14 @@ export default function Actu() {
                 <div className="flex items-center justify-center sm:flex-row flex-col gap-3 m-2">
                     
                     <div className="text-center flex gap-3 flex-row">
-                        <img src={btspop} className="object-cover sm:h-[200px] h-[120px]" />
+                        <img src={btspop} className="object-cover sm:h-[200px] h-[120px]" alt="image figurine pop bts"/>
                         <p className="text-center sm:w-[200px] w-[150px]">FIGURINE POP, DU GROUPE BTS,<br/>Jimin.<br/>
                             Sortie en Août 2025, à partir de 14€99.
                         </p>
                     </div>
                 
                     <div className="text-center flex flex-row gap-3">
-                        <img src={jutjuso} className="object-cover sm:h-[200px] h-[120px]" />
+                        <img src={jutjuso} className="object-cover sm:h-[200px] h-[120px]" alt="image anime jutjuso"/>
                         <p className="text-center w-[200px]">JUJUTSU KAISEN : Trésor caché / Mort prématurée | Le Film.<br/><br/>Sortie prévu dans nos salles 
                             le 09 Août 2025.
                         </p>

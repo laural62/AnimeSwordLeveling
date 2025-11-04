@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/AuthContext";
 import { signIn } from "../api/auth.api";
+import imagebackground from "../assets/bg-animeswordleveling.webp";
 
 
 export default function Login() {
@@ -56,10 +57,13 @@ export default function Login() {
 
     return (
         <div className="bg-black text-white md:h-screen h-[80vh]">
-            <h2 className="text-center text-2xl font-bold uppercase">Connexion !</h2>
+            <h2 className="text-center sm:text-3xl font-bold uppercase absolute inset-x-0 sm:top-28 top-16">Connexion !</h2>
                 {/**FORMULAIRE DE CONNEXION POUR LES UTILISATEURS INSCRIT ET ABONNER */}
+            <div className="flex justify-center">
+              <img src={imagebackground} alt="image de fond" className="w-[650px]" title="image de fond asl"/>
+            </div>
             <form
-            className="flex flex-col items-center justify-center gap-4 mb-6 mx-auto sm:max-w-[600px] sm:w-[500px] w-[250px]"
+            className="flex flex-col items-center justify-center gap-4 mb-6 mx-auto sm:max-w-[600px] sm:w-[500px] w-[250px] z-30 relative bottom-28"
             onSubmit={handleSubmit(submit)}
             >
                 <div className="flex flex-col mb-2">
@@ -103,17 +107,19 @@ export default function Login() {
                         En soumettant ce formulaire, j'accepte les politiques de confidentialités,  les mentions légales et les conditions générales d'utilisation.
                     </label>
                 </div>
+                
+                <div className="flex flex-row sm:gap-3 gap-1">
+                  <button className="bg-white text-black px-4 py-2 rounded hover:bg-blue-900 hover:text-white">
+                  Connexion
+                  </button>
 
-                <button className="bg-white text-black px-4 py-2 rounded hover:bg-blue-900 hover:text-white">
-                Connexion
-                </button>
-
-                <div className="text-center">
-                    <NavLink to={"/forgotpassword"} className="button-blue hidden px-3 py-2 hover:text-2xl hover:transition hover:duration-200">Mot de passe oubliée ?</NavLink>
-                </div>
-
-                <div className="text-center">
-                    <NavLink to={"/register"} className="button-blue px-3 py-2 hover:text-2xl hover:transition hover:duration-200">S'inscrire !</NavLink>
+                  <div className="text-center">
+                      <NavLink to={"/forgotpassword"} className="button-blue hidden px-3 py-2 hover:text-2xl hover:transition hover:duration-200">Mot de passe oubliée ?</NavLink>
+                  </div>
+                
+                  <div className="text-center">
+                      <NavLink to={"/register"} className="button-blue px-3 py-2 sm:hover:text-2xl sm:hover:transition sm:hover:duration-200 sm:absolute bottom-0">S'inscrire !</NavLink>
+                  </div>
                 </div>
 
             </form>

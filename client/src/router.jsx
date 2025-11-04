@@ -23,6 +23,7 @@ import LegendeSub from "./components/moncompte/LegendeSub";
 import OriginSub from "./components/moncompte/OriginSub";
 import CheckoutButton from "./components/stripe/CheckoutButton";
 import SuccessPage from "./components/stripe/SuccessPage";
+import PolitiqueConfidentialités from "./PagesLégales/PolitiqueConfidentialités";
 
 // Définition des pages directement dans le fichier
 
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
             <Register />
           </UserNotConnected>
         ),
+      },
+      {
+        path: "/politique",
+        element: <PolitiqueConfidentialités />,
       },
       {
         path: "/header",

@@ -85,9 +85,8 @@ export default function FormulaireContact() {
                         className="mr-4"
                         id="rgpd"
                         />
-                        En soumettant ce formulaire, vous acceptez que les données fournies soient utilisées pour vous recontacter.
-                        Pour connaitre et exercer vos droits sur ces données, vous pouvez consulter notre <a href="CGU.pdf" className="font-bold underline">politique de protection
-                         des données personnelles.</a>
+                        J’accepte que mes données saisies soient utilisées par Anime Sword Leveling uniquement dans le cadre du traitement de ma demande, 
+                        conformément à la <NavLink to={"/politique"} className="font-bold underline">politique de confidentialité.</NavLink>
                     </label>
                 </div>
             {/**boutton envoie formulaire + bouton retour -> Accueil */}

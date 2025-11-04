@@ -104,7 +104,8 @@ export default function Login() {
                         className="mr-4"
                         id="rgpd"
                         />
-                        En soumettant ce formulaire, j'accepte les politiques de confidentialités,  les mentions légales et les conditions générales d'utilisation.
+                        J’ai lu et j’accepte la Politique de Confidentialité et les Conditions Générales d’Utilisation d’Anime Sword Leveling,
+                         et j’autorise le traitement de mes données personnelles.
                     </label>
                 </div>
                 

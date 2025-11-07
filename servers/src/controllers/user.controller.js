@@ -176,3 +176,106 @@ export const logoutUser = async (req, res) => {
   });
   res.status(200).json({ message: "Déconnexion réussie" });
 };
+
+/* Mot de passe oublié */
+export const forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+
+    // Sécurité: Si l'utilisateur n'existe pas, on renvoie le même message de succès
+    // pour éviter d'exposer si un email est enregistré ou non.
+    if (!user) {
+      return res.status(200).json({
+        message:
+          "Si l'adresse mail est valide, un lien de réinitialisation a été envoyé.",
+      });
+    }
+
+    // Génération d'un jeton simple pour la réinitialisation du mot de passe.
+    // bcrypt peut être utilisé pour hacher une valeur temporaire.
+    const resetToken = await bcrypt.hash(user.email + Date.now(), 10);
+    const cleanedToken = resetToken.replace(/[^a-zA-Z0-9]/g, ""); // Nettoyage du token
+
+    // Sauvegarde du jeton et de sa date d'expiration dans la base de données
+    user.resetPasswordToken = cleanedToken;
+    user.resetPasswordExpires = Date.now() + 3600000; // 1 heure en ms
+    await user.save();
+
+    // Envoi de l'email avec le lien de réinitialisation
+    await sendResetPasswordEmail(user.email, cleanedToken);
+
+    return res.status(200).json({
+      message:
+        "Si l'adresse mail est valide, un lien de réinitialisation a été envoyé.",
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Erreur serveur", error: error.message });
+  }
+};
+
+/* Réinitialisation de mot de passe */
+export const resetPassword = async (req, res) => {
+  try {
+    const { token } = req.params;
+    const { password } = req.body;
+
+    const user = await User.findOne({
+      resetPasswordToken: token,
+      resetPasswordExpires: { $gt: Date.now() },
+    });
+
+    if (!user) {
+      return res.status(400).json({ message: "Token invalide ou expiré." });
+    }
+
+    // Hash du nouveau mot de passe
+    user.password = await bcrypt.hash(password, 10);
+
+    // Nettoie les champs de réinitialisation pour que le token ne puisse pas être réutilisé.
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpires = undefined;
+
+    await user.save();
+
+    res.status(200).json({ message: "Mot de passe mis à jour avec succès." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Erreur serveur", error: error.message });
+  }
+};
+
+/* Changement de mot de passe (utilisateur connecté) */
+export const changePassword = async (req, res) => {
+  try {
+    const { currentPassword, newPassword } = req.body;
+
+    if (!currentPassword || !newPassword) {
+      return res
+        .status(400)
+        .json({ message: "Veuillez remplir tous les champs." });
+    }
+
+    // L'ID de l'utilisateur est ajouté à req par le middleware authMiddleware.
+    const user = await User.findById(req.userId);
+
+    // Vérification du mot de passe actuel.
+    const isMatch = await bcrypt.compare(currentPassword, user.password);
+    if (!isMatch) {
+      return res
+        .status(400)
+        .json({ message: "Mot de passe actuel incorrect." });
+    }
+
+    // Hash du nouveau mot de passe.
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+    user.password = hashedPassword;
+    await user.save();
+
+    res.status(200).json({ message: "Mot de passe mis à jour avec succès." });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Erreur serveur", error: error.message });
+  }
+};

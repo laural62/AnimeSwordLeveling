@@ -15,7 +15,6 @@ import routes from "./routes/index.js";
 import { connectDB } from "./lib/db.js";
 
 // indique que l'on va utiliser .env
-
 dotenv.config();
 
 const PORT = process.env.PORT;
@@ -39,11 +38,6 @@ app.use(
 // chaque route localhost:3000 sera redirigé vers le dossier routes
 app.use("/", routes);
 
-app.listen(PORT, () => {
-  console.log(`Le serveur est démarré sur le port ${PORT}`);
-  connectDB();
-});
-
 //abonnement avec stripe
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -56,7 +50,7 @@ app.post("/create-checkout-session", async (req, res) => {
       mode: "subscription",
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
-      success_url: "https://animeswordleveling.netlify.app/success?session_id={CHECKOUT_SESSION_ID}", //mettre le nom de domain pour deployed
+      success_url: "https://animeswordleveling.netlify.app/success?session_id={CHECKOUT_SESSION_ID}", 
       cancel_url: "https://animeswordleveling.netlify.app/cancel",
     });
 
@@ -68,11 +62,10 @@ app.post("/create-checkout-session", async (req, res) => {
 
 // Route webhook pour gérer les abonnements avec stripe
 app.post("/webhook", express.raw({ type: "application/json" }), (req, res) => {
-  // ce handler doit être configuré AVEC la signature Stripe
   const sig = req.headers["stripe-signature"];
-  const endpointSecret = "SIGNATURE_WEBHOOK"; // à récupérer sur Stripe.
-
+  const endpointSecret = "SIGNATURE_WEBHOOK"; // à modifier par ta signature Stripe
   let event;
+
   try {
     event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
   } catch (err) {
@@ -82,11 +75,13 @@ app.post("/webhook", express.raw({ type: "application/json" }), (req, res) => {
   if (event.type === "checkout.session.completed") {
     const session = event.data.object;
     console.log("✅ Abonnement créé :", session);
-    // Ici, mets à jour ta base de données utilisateur
   }
 
   res.json({ received: true });
 });
 
-app.listen(3000, () => console.log("🚀 Server running on port 3000"));
-app.listen(3000, () => console.log("Server running on port 3000"));
+// ✅ Le *seul* app.listen
+app.listen(PORT, () => {
+  console.log(`🚀 Serveur lancé sur http://localhost:${PORT}`);
+  connectDB();
+});

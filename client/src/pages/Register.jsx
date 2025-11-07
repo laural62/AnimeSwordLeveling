@@ -117,7 +117,7 @@ export default function Register() {
                 </div>
 
                     {/**Nom & Prenom */}
-                <div className="flex sm:flex-row flex-col mb-5 sm:gap-3 gap-1">
+                <div className="flex sm:flex-row flex-col mb-4 sm:gap-3 gap-1">
                     <div>
                         <label htmlFor="name" className="mb-5">
                             Nom
@@ -143,19 +143,8 @@ export default function Register() {
                 </div>
 
                     {/**Nom & Prenom */}
-                <div className="flex sm:flex-row flex-col mb-4 sm:gap-3 gap-1">
-                    <div>
-                        <label htmlFor="tel" className="mb-5">
-                            Téléphone
-                        </label>
-                        <input
-                            {...register("tel")}
-                            type="tel"
-                            id="tel"
-                            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        />
-                    </div>
-                    <div>
+                <div>
+                    
                         <label htmlFor="email" className="mb-5">
                             Email
                         </label>
@@ -163,12 +152,12 @@ export default function Register() {
                             {...register("email")}
                             type="email"
                             id="email"
-                            className="border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="border border-gray-300 rounded px-3 py-2 sm:w-[500px] focus:outline-none focus:ring-2 focus:ring-blue-500"
                         />
                         {errors.email && (
                             <p className="text-red-500">{errors.email.message}</p>
                         )}
-                    </div>
+                    
                 </div>
 
                     {/**Password & confirmation password */}

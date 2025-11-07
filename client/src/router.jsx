@@ -17,7 +17,6 @@ import CompteUser from "./components/moncompte/CompteUser";
 import UserConnected from "./components/ProtectedRoutes/UserConnected";
 import UserNotConnected from "./components/ProtectedRoutes/UserNotConnected";
 import MonAbonnement from "./components/moncompte/MonAbonnement";
-import ResetPassword from "./pages/ResetPassword";
 import ForgotPassword from "./pages/ForgotPassword";
 import LegendeSub from "./components/moncompte/LegendeSub";
 import OriginSub from "./components/moncompte/OriginSub";
@@ -172,10 +171,6 @@ export const router = createBrowserRouter([
       {
         path: "/forgotpassword",
         element: <ForgotPassword />,
-      },
-      {
-        path: "/resetpassword",
-        element: <ResetPassword />,
       },
     ],
   },

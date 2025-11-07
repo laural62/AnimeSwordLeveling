@@ -1,6 +1,20 @@
 //import { BASE_URL } from "../utils/url";
 
-const BASE_URL = import.meta.env.VITE_SERVER_URL;
+const BASE_URL = import.meta.env.VITE_SERVER_URL || "";
+
+function buildUrl(path) {
+  const base = String(BASE_URL).replace(/\/+$/g, "");
+  return `${base}${path}`;
+}
+
+async function parseJsonSafe(response) {
+  try {
+    return await response.json();
+  } catch (error) {
+    return null;
+  }
+  
+}
 
 export async function signUp(values) {
   try {
@@ -11,12 +25,11 @@ export async function signUp(values) {
         "Content-type": "application/json",
       },
     });
-    const newUserMessage = await response.json();
-    //console.log(newUserMessage);
-    
-    return newUserMessage;
+    const data = await parseJsonSafe(response);
+    if (!response.ok) throw new Error((data && data.message) || "Erreur inscription utilisateur");
+    return data;
   } catch (error) {
-    console.log(error);
+    console.log("signup error",error);
   }
 }
 
@@ -58,4 +71,22 @@ export async function signout() {
     method: "DELETE",
     credentials: "include",
   });
+}
+
+export async function requestPasswordReset({ email }) {
+  try {
+    const response = await fetch(buildUrl("/user/forgot-password"), {
+      method: "POST",
+      body: JSON.stringify({ email }),
+      headers: { "Content-type": "application/json" },
+    });
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error((data && data.message) || "Erreur envoi email de réinitialisation");
+    }
+    return data;
+  } catch (error) {
+    console.error("requestPasswordReset error:", error);
+    throw error;
+  }
 }

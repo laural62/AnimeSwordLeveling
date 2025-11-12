@@ -4,12 +4,14 @@ import {
     login, 
     register, 
     verifyMail, 
-    logoutUser
+    logoutUser,
+    forgotPassword,
+    resetPassword
 } from "../controllers/user.controller.js";
 
 const router = express.Router();
 
-router.post("/", register);
+router.post("/register", register);
 
 router.post("/login", login);
 
@@ -18,6 +20,10 @@ router.get("/verifyMail/:token", verifyMail);
 router.get("/current", currentUser);
 
 router.delete("/deleteToken", logoutUser);
+
+router.post("/forgot-password", forgotPassword);
+
+router.post("/reset-password/:token", resetPassword);
 
 export default router;
 

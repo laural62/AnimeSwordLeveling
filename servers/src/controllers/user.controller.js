@@ -2,8 +2,9 @@ import User from "../models/user.schema.js";
 import TempUser from "../models/tempuser.schema.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { sendConfirmationEmail } from "../email/email.js";
+import { sendConfirmationEmail, sendResetPasswordEmail } from "../email/email.js";
 import dotenv from "dotenv";
+import crypto from "crypto";
 
 dotenv.config();
 
@@ -164,7 +165,7 @@ export const currentUser = async (req, res) => {
       res.status(400).json(null);
     }
   } else {
-    res.status(400).json(null);
+    res.status(200).json(null);
   }
 };
 
@@ -192,18 +193,17 @@ export const forgotPassword = async (req, res) => {
       });
     }
 
-    // Génération d'un jeton simple pour la réinitialisation du mot de passe.
-    // bcrypt peut être utilisé pour hacher une valeur temporaire.
-    const resetToken = await bcrypt.hash(user.email + Date.now(), 10);
-    const cleanedToken = resetToken.replace(/[^a-zA-Z0-9]/g, ""); // Nettoyage du token
+    // Génération d'un token aléatoire simple et fiable
+    const resetToken = crypto.randomBytes(32).toString("hex");
+    const hashedToken = await bcrypt.hash(resetToken, 10);
 
-    // Sauvegarde du jeton et de sa date d'expiration dans la base de données
-    user.resetPasswordToken = cleanedToken;
+    // Sauvegarde du jeton hashé et de sa date d'expiration dans la base de données
+    user.resetPasswordToken = hashedToken;
     user.resetPasswordExpires = Date.now() + 3600000; // 1 heure en ms
     await user.save();
 
-    // Envoi de l'email avec le lien de réinitialisation
-    await sendResetPasswordEmail(user.email, cleanedToken);
+    // Envoi de l'email avec le lien de réinitialisation (token en clair dans l'URL)
+    await sendResetPasswordEmail(user.email, resetToken);
 
     return res.status(200).json({
       message:
@@ -221,23 +221,42 @@ export const resetPassword = async (req, res) => {
     const { token } = req.params;
     const { password } = req.body;
 
-    const user = await User.findOne({
-      resetPasswordToken: token,
+    if (!token || !password) {
+      return res.status(400).json({ message: "Token et mot de passe requis." });
+    }
+
+    // Cherche l'utilisateur avec un token non expiré et un token non null
+    const users = await User.find({
+      resetPasswordToken: { $ne: null },
       resetPasswordExpires: { $gt: Date.now() },
     });
 
-    if (!user) {
+    if (users.length === 0) {
+      return res.status(400).json({ message: "Token invalide ou expiré." });
+    }
+
+    // Vérifie quel utilisateur a le bon token
+    let validUser = null;
+    for (const user of users) {
+      const isTokenValid = await bcrypt.compare(token, user.resetPasswordToken);
+      if (isTokenValid) {
+        validUser = user;
+        break;
+      }
+    }
+
+    if (!validUser) {
       return res.status(400).json({ message: "Token invalide ou expiré." });
     }
 
     // Hash du nouveau mot de passe
-    user.password = await bcrypt.hash(password, 10);
+    validUser.password = await bcrypt.hash(password, 10);
 
     // Nettoie les champs de réinitialisation pour que le token ne puisse pas être réutilisé.
-    user.resetPasswordToken = undefined;
-    user.resetPasswordExpires = undefined;
+    validUser.resetPasswordToken = null;
+    validUser.resetPasswordExpires = null;
 
-    await user.save();
+    await validUser.save();
 
     res.status(200).json({ message: "Mot de passe mis à jour avec succès." });
   } catch (error) {

@@ -18,24 +18,26 @@ async function parseJsonSafe(response) {
 
 export async function signUp(values) {
   try {
-    const response = await fetch(`${BASE_URL}user`, {
+    const response = await fetch(`${BASE_URL}/user/register`, {
       method: "POST",
       body: JSON.stringify(values),
       headers: {
         "Content-type": "application/json",
       },
+      credentials: "include",
     });
     const data = await parseJsonSafe(response);
     if (!response.ok) throw new Error((data && data.message) || "Erreur inscription utilisateur");
     return data;
   } catch (error) {
     console.log("signup error",error);
+    throw error;
   }
 }
 
 export async function signIn(values) {
   try {
-    const response = await fetch(`${BASE_URL}user/login`, {
+    const response = await fetch(`${BASE_URL}/user/login`, {
       method: "POST",
       body: JSON.stringify(values),
       headers: {
@@ -47,12 +49,13 @@ export async function signIn(values) {
     return userConnected;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 }
 
 export async function getCurrentUser() {
   try {
-    const response = await fetch(`${BASE_URL}user/current`, {
+    const response = await fetch(`${BASE_URL}/user/current`, {
       method: "GET",
       credentials: "include",
     });
@@ -63,11 +66,12 @@ export async function getCurrentUser() {
     }
   } catch (error) {
     console.log(error);
+    return null;
   }
 }
 
 export async function signout() {
-  await fetch(`${BASE_URL}user/deleteToken`, {
+  await fetch(`${BASE_URL}/user/deleteToken`, {
     method: "DELETE",
     credentials: "include",
   });
@@ -82,11 +86,29 @@ export async function requestPasswordReset({ email }) {
     });
     const data = await response.json();
     if (!response.ok) {
-      throw new Error((data && data.message) || "Erreur envoi email de réinitialisation");
+      throw new Error((data && data.message) || "Erreur envoi email de rÃ©initialisation");
     }
     return data;
   } catch (error) {
     console.error("requestPasswordReset error:", error);
     throw error;
   }
+}
+
+export async function resetPassword({ token, password }) {
+  try {
+    const response = await fetch(buildUrl(`/user/reset-password/${token}`), {
+      method: "POST",
+      body: JSON.stringify({ password }),
+      headers: { "Content-type": "application/json" },  
+    });
+    const data = await response.json(); 
+    if (!response.ok) {
+      throw new Error((data && data.message) || "Erreur rÃ©initialisation du mot de passe");
+    }
+    return data;  
+  } catch (error) {
+    console.error("resetPassword error:", error);
+    throw error;
+  };  
 }

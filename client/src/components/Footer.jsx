@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function Footer({userConnected, toggleUser}) {
-    console.log(userConnected);
+export default function Footer() {
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -11,7 +10,7 @@ export default function Footer({userConnected, toggleUser}) {
     };
 
     return (
-        <footer class="bg-black text-white flex justify-around items-center space-x-5 h-[20vh]">
+        <footer className="bg-black text-white flex justify-around items-center space-x-5 h-[20vh]">
             <div>
                 <ul className="list-style-none hidden sm:block">
                     <NavLink to={"/"} onClick={scrollToTop} className="hover:text-2xl"><li>Accueil</li></NavLink>

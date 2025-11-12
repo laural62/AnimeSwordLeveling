@@ -26,7 +26,9 @@ export default function ForgotPassword() {
 
   async function onSubmit(values) {
     try {
+      console.log("Requête reset mot de passe envoyée", values);
       await requestPasswordReset(values);
+      
       setSubmitted(true);
     } catch (error) {
       console.error("Erreur requête reset mot de passe:", error);

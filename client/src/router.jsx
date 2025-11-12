@@ -23,6 +23,7 @@ import OriginSub from "./components/moncompte/OriginSub";
 import CheckoutButton from "./components/stripe/CheckoutButton";
 import SuccessPage from "./components/stripe/SuccessPage";
 import PolitiqueConfidentialités from "./PagesLégales/PolitiqueConfidentialités";
+import ResetPassword from "./pages/ResetPassword";
 
 // Définition des pages directement dans le fichier
 
@@ -171,6 +172,10 @@ export const router = createBrowserRouter([
       {
         path: "/forgotpassword",
         element: <ForgotPassword />,
+      },
+      {
+        path: "/reset-password/:token",
+        element: <ResetPassword />,
       },
     ],
   },
